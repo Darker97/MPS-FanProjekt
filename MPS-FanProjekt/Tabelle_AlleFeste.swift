@@ -16,9 +16,7 @@ class Tabelle_AlleFeste: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
+        WorkingObjekt = NewLoader.start()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -30,28 +28,27 @@ class Tabelle_AlleFeste: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return WorkingObjekt.Feste.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 1
     }
 
     //MARK: - Table View Loading sequence
     
     @IBAction func RefreshMensa(_ sender: UIRefreshControl) {
-        WorkingObjekt = NewLoader.start()
-        tableView.reloadData()
-        sender.endRefreshing()
+        let que = DispatchQueue(label: "Update")
+        que.async {
+            self.WorkingObjekt = self.NewLoader.start()
+            self.tableView.reloadData()
+            sender.endRefreshing()}
     }
-    
-    func loadItems() {
-        
-    }
+
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         cell.textLabel?.text = WorkingObjekt.Feste[indexPath.row].Name
         //cell.detailTextLabel?.text = WorkingObjekt.Feste[indexPath.row].Datum as String

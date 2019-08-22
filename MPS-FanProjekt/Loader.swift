@@ -18,22 +18,21 @@ class Loader{
     func start()-> AlleDaten{
         let MainLink: String = "https://www.spectaculum.de/"
         var Work = AlleDaten(LinkDerSeite: MainLink)
-        
-        DispatchQueue.main.async {
+        print("eins")
             Work = self.ladenDerMainSeite(MainLink: MainLink, Temporär: Work)
-            
+            print("zwei")
             Work = self.scrappenDerLinks(temporär: Work)
-            
+            print("drei")
             Work = self.ladenDerLinkSeiten(temporär: Work)
+            print("vier")
             Work = self.scrappenDerInfos(temporär: Work)
-        }
         
         return Work
     }
     
     func ladenDerMainSeite(MainLink: String, Temporär: AlleDaten) -> AlleDaten{
         var Temp = Temporär
-        print("Vorher")
+        
         
         let response = Alamofire.request(MainLink).responseString().value
             //print(response)
@@ -50,8 +49,8 @@ class Loader{
             
             let doc = try SwiftSoup.parse(html)
             
-            let Namen: Elements = try doc.select("[id=\"linkTermine\"] > ul > li > a")
-            
+            let Namen: Elements = try doc.select("#linkTermine > ul > li > a")
+            print(Namen.size())
             for link: Element in Namen.array(){
                 let linkText: String = try link.text()
                     //print(linkText)
@@ -65,6 +64,7 @@ class Loader{
         } catch {
                 print("error")
         }
+        //print(Temp.Feste)
         return Temp
     }
     
