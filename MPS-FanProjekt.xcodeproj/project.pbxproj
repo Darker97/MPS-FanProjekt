@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A20BA8B5E7AC6BB3F3818DA8 /* Pods_MPS_FanProjektTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F0FCF4798D6EE8FA12D045 /* Pods_MPS_FanProjektTests.framework */; };
+		AA1BECC2230F3F0500D42C8F /* AlleDaten.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1BECBF230F3F0500D42C8F /* AlleDaten.swift */; };
+		AA1BECC3230F3F0500D42C8F /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1BECC0230F3F0500D42C8F /* Loader.swift */; };
+		AA1BECC4230F3F0500D42C8F /* Tabelle_AlleFeste.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1BECC1230F3F0500D42C8F /* Tabelle_AlleFeste.swift */; };
 		AA438DA5230F3E1B00E99970 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA438DA4230F3E1B00E99970 /* AppDelegate.swift */; };
 		AA438DA7230F3E1B00E99970 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA438DA6230F3E1B00E99970 /* SceneDelegate.swift */; };
 		AA438DA9230F3E1B00E99970 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA438DA8230F3E1B00E99970 /* ViewController.swift */; };
@@ -15,6 +19,7 @@
 		AA438DB1230F3E1E00E99970 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA438DB0230F3E1E00E99970 /* Assets.xcassets */; };
 		AA438DB4230F3E1E00E99970 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA438DB2230F3E1E00E99970 /* LaunchScreen.storyboard */; };
 		AA438DBF230F3E1E00E99970 /* MPS_FanProjektTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA438DBE230F3E1E00E99970 /* MPS_FanProjektTests.swift */; };
+		C4E68FACE2531988AE2F06E9 /* Pods_MPS_FanProjekt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4887CA2B2C8D4C34363C6E67 /* Pods_MPS_FanProjekt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +33,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19FE01D8D797636BEA6B3E21 /* Pods-MPS-FanProjektTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPS-FanProjektTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MPS-FanProjektTests/Pods-MPS-FanProjektTests.release.xcconfig"; sourceTree = "<group>"; };
+		46B45335081403CF52344040 /* Pods-MPS-FanProjekt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPS-FanProjekt.release.xcconfig"; path = "Pods/Target Support Files/Pods-MPS-FanProjekt/Pods-MPS-FanProjekt.release.xcconfig"; sourceTree = "<group>"; };
+		4887CA2B2C8D4C34363C6E67 /* Pods_MPS_FanProjekt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MPS_FanProjekt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		69F0FCF4798D6EE8FA12D045 /* Pods_MPS_FanProjektTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MPS_FanProjektTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA1BECBF230F3F0500D42C8F /* AlleDaten.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlleDaten.swift; sourceTree = "<group>"; };
+		AA1BECC0230F3F0500D42C8F /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		AA1BECC1230F3F0500D42C8F /* Tabelle_AlleFeste.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tabelle_AlleFeste.swift; sourceTree = "<group>"; };
 		AA438DA1230F3E1B00E99970 /* MPS-FanProjekt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MPS-FanProjekt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA438DA4230F3E1B00E99970 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA438DA6230F3E1B00E99970 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +52,8 @@
 		AA438DBA230F3E1E00E99970 /* MPS-FanProjektTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MPS-FanProjektTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA438DBE230F3E1E00E99970 /* MPS_FanProjektTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPS_FanProjektTests.swift; sourceTree = "<group>"; };
 		AA438DC0230F3E1E00E99970 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B54BE0CE8FCFCBAFEF13826A /* Pods-MPS-FanProjektTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPS-FanProjektTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MPS-FanProjektTests/Pods-MPS-FanProjektTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E4537B7A68AB2DC9F660F665 /* Pods-MPS-FanProjekt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPS-FanProjekt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MPS-FanProjekt/Pods-MPS-FanProjekt.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4E68FACE2531988AE2F06E9 /* Pods_MPS_FanProjekt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,18 +69,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A20BA8B5E7AC6BB3F3818DA8 /* Pods_MPS_FanProjektTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		095C702ABC3CDA55EE0C5C2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4887CA2B2C8D4C34363C6E67 /* Pods_MPS_FanProjekt.framework */,
+				69F0FCF4798D6EE8FA12D045 /* Pods_MPS_FanProjektTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AA438D98230F3E1B00E99970 = {
 			isa = PBXGroup;
 			children = (
 				AA438DA3230F3E1B00E99970 /* MPS-FanProjekt */,
 				AA438DBD230F3E1E00E99970 /* MPS-FanProjektTests */,
 				AA438DA2230F3E1B00E99970 /* Products */,
+				E57BF46FB117A8832A5DAC17 /* Pods */,
+				095C702ABC3CDA55EE0C5C2A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +116,9 @@
 				AA438DB2230F3E1E00E99970 /* LaunchScreen.storyboard */,
 				AA438DB5230F3E1E00E99970 /* Info.plist */,
 				AA438DAD230F3E1B00E99970 /* MPS_FanProjekt.xcdatamodeld */,
+				AA1BECBF230F3F0500D42C8F /* AlleDaten.swift */,
+				AA1BECC0230F3F0500D42C8F /* Loader.swift */,
+				AA1BECC1230F3F0500D42C8F /* Tabelle_AlleFeste.swift */,
 			);
 			path = "MPS-FanProjekt";
 			sourceTree = "<group>";
@@ -102,6 +132,17 @@
 			path = "MPS-FanProjektTests";
 			sourceTree = "<group>";
 		};
+		E57BF46FB117A8832A5DAC17 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E4537B7A68AB2DC9F660F665 /* Pods-MPS-FanProjekt.debug.xcconfig */,
+				46B45335081403CF52344040 /* Pods-MPS-FanProjekt.release.xcconfig */,
+				B54BE0CE8FCFCBAFEF13826A /* Pods-MPS-FanProjektTests.debug.xcconfig */,
+				19FE01D8D797636BEA6B3E21 /* Pods-MPS-FanProjektTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -109,9 +150,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA438DC3230F3E1E00E99970 /* Build configuration list for PBXNativeTarget "MPS-FanProjekt" */;
 			buildPhases = (
+				AE49A55BA52F1E43B90AE70A /* [CP] Check Pods Manifest.lock */,
 				AA438D9D230F3E1B00E99970 /* Sources */,
 				AA438D9E230F3E1B00E99970 /* Frameworks */,
 				AA438D9F230F3E1B00E99970 /* Resources */,
+				F797D6A5376B4B7411C812EE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +169,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA438DC6230F3E1E00E99970 /* Build configuration list for PBXNativeTarget "MPS-FanProjektTests" */;
 			buildPhases = (
+				EE2564D3D72DA6AB73F9BFD5 /* [CP] Check Pods Manifest.lock */,
 				AA438DB6230F3E1E00E99970 /* Sources */,
 				AA438DB7230F3E1E00E99970 /* Frameworks */,
 				AA438DB8230F3E1E00E99970 /* Resources */,
@@ -198,15 +242,79 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AE49A55BA52F1E43B90AE70A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MPS-FanProjekt-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EE2564D3D72DA6AB73F9BFD5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MPS-FanProjektTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F797D6A5376B4B7411C812EE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MPS-FanProjekt/Pods-MPS-FanProjekt-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-Synchronous/Alamofire_Synchronous.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_Synchronous.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MPS-FanProjekt/Pods-MPS-FanProjekt-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AA438D9D230F3E1B00E99970 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				AA438DA9230F3E1B00E99970 /* ViewController.swift in Sources */,
+				AA1BECC2230F3F0500D42C8F /* AlleDaten.swift in Sources */,
+				AA1BECC3230F3F0500D42C8F /* Loader.swift in Sources */,
 				AA438DA5230F3E1B00E99970 /* AppDelegate.swift in Sources */,
 				AA438DAF230F3E1B00E99970 /* MPS_FanProjekt.xcdatamodeld in Sources */,
 				AA438DA7230F3E1B00E99970 /* SceneDelegate.swift in Sources */,
+				AA1BECC4230F3F0500D42C8F /* Tabelle_AlleFeste.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +472,7 @@
 		};
 		AA438DC4230F3E1E00E99970 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4537B7A68AB2DC9F660F665 /* Pods-MPS-FanProjekt.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -382,6 +491,7 @@
 		};
 		AA438DC5230F3E1E00E99970 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46B45335081403CF52344040 /* Pods-MPS-FanProjekt.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -400,6 +510,7 @@
 		};
 		AA438DC7230F3E1E00E99970 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B54BE0CE8FCFCBAFEF13826A /* Pods-MPS-FanProjektTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -421,6 +532,7 @@
 		};
 		AA438DC8230F3E1E00E99970 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19FE01D8D797636BEA6B3E21 /* Pods-MPS-FanProjektTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
