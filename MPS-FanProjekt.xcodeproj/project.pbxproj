@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A20BA8B5E7AC6BB3F3818DA8 /* Pods_MPS_FanProjektTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F0FCF4798D6EE8FA12D045 /* Pods_MPS_FanProjektTests.framework */; };
+		AA1BECC2230F3F0500D42C8F /* AlleDaten.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1BECBF230F3F0500D42C8F /* AlleDaten.swift */; };
+		AA1BECC3230F3F0500D42C8F /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1BECC0230F3F0500D42C8F /* Loader.swift */; };
+		AA1BECC4230F3F0500D42C8F /* Tabelle_AlleFeste.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1BECC1230F3F0500D42C8F /* Tabelle_AlleFeste.swift */; };
 		AA438DA5230F3E1B00E99970 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA438DA4230F3E1B00E99970 /* AppDelegate.swift */; };
 		AA438DA7230F3E1B00E99970 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA438DA6230F3E1B00E99970 /* SceneDelegate.swift */; };
 		AA438DA9230F3E1B00E99970 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA438DA8230F3E1B00E99970 /* ViewController.swift */; };
@@ -34,6 +37,9 @@
 		46B45335081403CF52344040 /* Pods-MPS-FanProjekt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPS-FanProjekt.release.xcconfig"; path = "Pods/Target Support Files/Pods-MPS-FanProjekt/Pods-MPS-FanProjekt.release.xcconfig"; sourceTree = "<group>"; };
 		4887CA2B2C8D4C34363C6E67 /* Pods_MPS_FanProjekt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MPS_FanProjekt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F0FCF4798D6EE8FA12D045 /* Pods_MPS_FanProjektTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MPS_FanProjektTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA1BECBF230F3F0500D42C8F /* AlleDaten.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlleDaten.swift; sourceTree = "<group>"; };
+		AA1BECC0230F3F0500D42C8F /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		AA1BECC1230F3F0500D42C8F /* Tabelle_AlleFeste.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tabelle_AlleFeste.swift; sourceTree = "<group>"; };
 		AA438DA1230F3E1B00E99970 /* MPS-FanProjekt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MPS-FanProjekt.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA438DA4230F3E1B00E99970 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA438DA6230F3E1B00E99970 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +116,9 @@
 				AA438DB2230F3E1E00E99970 /* LaunchScreen.storyboard */,
 				AA438DB5230F3E1E00E99970 /* Info.plist */,
 				AA438DAD230F3E1B00E99970 /* MPS_FanProjekt.xcdatamodeld */,
+				AA1BECBF230F3F0500D42C8F /* AlleDaten.swift */,
+				AA1BECC0230F3F0500D42C8F /* Loader.swift */,
+				AA1BECC1230F3F0500D42C8F /* Tabelle_AlleFeste.swift */,
 			);
 			path = "MPS-FanProjekt";
 			sourceTree = "<group>";
@@ -300,9 +309,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA438DA9230F3E1B00E99970 /* ViewController.swift in Sources */,
+				AA1BECC2230F3F0500D42C8F /* AlleDaten.swift in Sources */,
+				AA1BECC3230F3F0500D42C8F /* Loader.swift in Sources */,
 				AA438DA5230F3E1B00E99970 /* AppDelegate.swift in Sources */,
 				AA438DAF230F3E1B00E99970 /* MPS_FanProjekt.xcdatamodeld in Sources */,
 				AA438DA7230F3E1B00E99970 /* SceneDelegate.swift in Sources */,
+				AA1BECC4230F3F0500D42C8F /* Tabelle_AlleFeste.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
