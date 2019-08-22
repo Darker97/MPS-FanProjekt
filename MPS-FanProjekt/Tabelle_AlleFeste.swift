@@ -39,14 +39,13 @@ class Tabelle_AlleFeste: UITableViewController {
     //MARK: - Table View Loading sequence
     
     @IBAction func RefreshMensa(_ sender: UIRefreshControl) {
-        WorkingObjekt = NewLoader.start()
-        tableView.reloadData()
-        sender.endRefreshing()
+        let que = DispatchQueue(label: "Update")
+        que.async {
+            self.WorkingObjekt = self.NewLoader.start()
+            self.tableView.reloadData()
+            sender.endRefreshing()}
     }
-    
-    func loadItems() {
-        
-    }
+
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)

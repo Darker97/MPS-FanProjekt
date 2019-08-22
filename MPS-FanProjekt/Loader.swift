@@ -49,7 +49,7 @@ class Loader{
             
             let doc = try SwiftSoup.parse(html)
             
-            let Namen: Elements = try doc.select("[id=\"linkTermine\"] > ul > li > a")
+            let Namen: Elements = try doc.select("#linkTermine > ul > li > a")
             print(Namen.size())
             for link: Element in Namen.array(){
                 let linkText: String = try link.text()
@@ -64,6 +64,7 @@ class Loader{
         } catch {
                 print("error")
         }
+        //print(Temp.Feste)
         return Temp
     }
     
