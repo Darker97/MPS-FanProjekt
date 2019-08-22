@@ -7,6 +7,10 @@ target 'MPS-FanProjekt' do
 
   # Pods for MPS-FanProjekt
 
+    pod 'SwiftSoup'
+  pod 'Alamofire'
+  pod 'Alamofire-Synchronous'
+
   target 'MPS-FanProjektTests' do
     inherit! :search_paths
     # Pods for testing
