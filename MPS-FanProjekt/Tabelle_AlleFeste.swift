@@ -28,12 +28,12 @@ class Tabelle_AlleFeste: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return WorkingObjekt.Feste.count
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return WorkingObjekt.Feste.count
     }
 
     //MARK: - Table View Loading sequence
@@ -51,6 +51,7 @@ class Tabelle_AlleFeste: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         cell.textLabel?.text = WorkingObjekt.Feste[indexPath.row].Name
+        print(indexPath.row)
         //cell.detailTextLabel?.text = WorkingObjekt.Feste[indexPath.row].Datum as String
         return cell
     }

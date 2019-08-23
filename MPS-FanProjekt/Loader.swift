@@ -52,9 +52,9 @@ class Loader{
             let Namen: Elements = try doc.select("#linkTermine > ul > li > a")
             print(Namen.size())
             for link: Element in Namen.array(){
-                let linkText: String = try link.text()
+                var linkText: String = try link.text()
                     //print(linkText)
-                let linkHref = try link.attr("href")
+                var linkHref = try link.attr("href")
                     //print(linkHref)
                 Temp.Feste.append(Fest(NameDesFestes: linkText, linkDesFestes: linkHref))
             }
@@ -64,7 +64,6 @@ class Loader{
         } catch {
                 print("error")
         }
-        //print(Temp.Feste)
         return Temp
     }
     
@@ -126,7 +125,6 @@ class Loader{
         } catch {
                 print("error")
         }
-        
         
         return aktuelleFest
     }
