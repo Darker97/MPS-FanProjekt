@@ -16,12 +16,15 @@ class Tabelle_AlleFeste: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        WorkingObjekt = NewLoader.start()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        let DatenLaden = UserDefaults.standard
+        if (DatenLaden.object(forKey: "AlleDatenSpeicher") != nil){
+            let Test = DatenLaden.object(forKey: "AlleDatenSpeicher") as? Data
+            WorkingObjekt = try? PropertyListDecoder().decode(AlleDaten.self, from: Test!)
+        }else{
+            WorkingObjekt = NewLoader.start()
+            DatenLaden.set(try? PropertyListEncoder().encode(WorkingObjekt), forKey: "AlleDatenSpeicher")
+        }
     }
 
     // MARK: - Table view data source
@@ -43,7 +46,11 @@ class Tabelle_AlleFeste: UITableViewController {
         que.async {
             self.WorkingObjekt = self.NewLoader.start()
             self.tableView.reloadData()
-            sender.endRefreshing()}
+            sender.endRefreshing()
+        }
+        
+        let DatenLaden = UserDefaults.standard
+        DatenLaden.set(try? PropertyListEncoder().encode(WorkingObjekt), forKey: "AlleDatenSpeicher")
     }
 
     
