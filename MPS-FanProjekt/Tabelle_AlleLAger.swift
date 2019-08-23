@@ -17,7 +17,13 @@ class Tabelle_AlleLAger: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let DatenLaden = UserDefaults.standard
-        WorkingObjekt = DatenLaden.object(forKey: "Ubergabe") as! Fest
+        let Test = DatenLaden.object(forKey: "Ubergabe") as? Data
+        
+        WorkingObjekt = try? PropertyListDecoder().decode(Fest.self, from: Test!)
+        
+        if(WorkingObjekt.Heerlager.count == 0){
+            WorkingObjekt.Heerlager.append(lager(NameDesLagers: "Leider Noch keine Infos :("))
+        }
     }
 
     // MARK: - Table view data source
@@ -36,9 +42,23 @@ class Tabelle_AlleLAger: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        cell.textLabel?.text = WorkingObjekt.Heerlager[indexPath.row].name
+        var temp = ""
+        
+        if (WorkingObjekt.Heerlager[indexPath.row].name.contains("Homepage")){
+            let text = WorkingObjekt.Heerlager[indexPath.row].name.split(separator: " ")
+            for wörter in 0...text.count-2{
+                temp = temp + String(text[wörter]) + " "
+            }
+        }else{
+            temp = WorkingObjekt.Heerlager[indexPath.row].name
+        }
         // Configure the cell...
 
+        cell.textLabel?.text = temp
+        
+        cell.textLabel?.numberOfLines=0
+        cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        
         return cell
     }
     

@@ -18,7 +18,13 @@ class Tabelle_AlleKu_nstler: UITableViewController {
         super.viewDidLoad()
 
         let DatenLaden = UserDefaults.standard
-        WorkingObjekt = DatenLaden.object(forKey: "Ubergabe") as! Fest
+        let Test = DatenLaden.object(forKey: "Ubergabe") as? Data
+        
+        WorkingObjekt = try? PropertyListDecoder().decode(Fest.self, from: Test!)
+        
+        if(WorkingObjekt.Spielplan[0].Name == ""){
+            WorkingObjekt.Spielplan.append(band(NameDerBand: "Leider Noch keine Infos :("))
+        }
     }
 
     // MARK: - Table view data source
@@ -39,7 +45,8 @@ class Tabelle_AlleKu_nstler: UITableViewController {
         
         cell.textLabel?.text = WorkingObjekt.Spielplan[indexPath.row].Name
         // Configure the cell...
-
+        cell.textLabel?.numberOfLines=0
+        cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         return cell
     }
     

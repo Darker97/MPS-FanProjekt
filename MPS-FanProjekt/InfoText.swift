@@ -17,10 +17,10 @@ class InfoText: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let WorkingObjekt: Fest = DatenLaden.object(forKey: "Ubergabe") as! Fest
+        let Test = DatenLaden.object(forKey: "Ubergabe") as? Data
         
-        
-        InfoText.text = WorkingObjekt.InfoText
+        let WorkingObjekt = try? PropertyListDecoder().decode(Fest.self, from: Test!)
+        InfoText.text = WorkingObjekt?.InfoText
         // Do any additional setup after loading the view.
     }
     

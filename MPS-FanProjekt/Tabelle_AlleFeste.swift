@@ -58,10 +58,12 @@ class Tabelle_AlleFeste: UITableViewController {
         return cell
     }
 
-    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: IndexPath!) {
+
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
         let DatenLaden = UserDefaults.standard
-        DatenLaden.set(WorkingObjekt.Feste[indexPath.row], forKey: "Ubergabe")
         
+        DatenLaden.set(try? PropertyListEncoder().encode(WorkingObjekt.Feste[indexPath.row]), forKey: "Ubergabe")
+        performSegue(withIdentifier: "Weitere Infos", sender: Any?.self)
     }
 
     /*

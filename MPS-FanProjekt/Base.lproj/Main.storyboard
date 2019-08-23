@@ -65,7 +65,7 @@
                         <attributedString key="attributedTitle">
                             <fragment content="Was gibts neues?">
                                 <attributes>
-                                    <font key="NSFont" metaFont="toolTip"/>
+                                    <font key="NSFont" metaFont="menu" size="11"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
@@ -75,7 +75,7 @@
                         </connections>
                     </refreshControl>
                     <connections>
-                        <segue destination="ghU-Pn-Y72" kind="popoverPresentation" popoverAnchorView="eQb-EY-XHO" id="yzh-Ze-23f">
+                        <segue destination="ghU-Pn-Y72" kind="popoverPresentation" identifier="Weitere Infos" popoverAnchorView="eQb-EY-XHO" id="yzh-Ze-23f">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
                     </connections>
@@ -250,7 +250,7 @@
         <scene sceneID="BDb-A4-9Jt">
             <objects>
                 <tabBarController title="Infos" id="ghU-Pn-Y72" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Zxc-Zy-75w">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="Zxc-Zy-75w">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
