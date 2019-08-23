@@ -1,27 +1,30 @@
 //
-//  Tabelle_AlleFeste.swift
-//  MPS-Fanprojekt
+//  Tabelle_AlleKünstler.swift
+//  MPS-FanProjekt
 //
-//  Created by Christian Baltzer on 22.08.19.
+//  Created by Christian Baltzer on 23.08.19.
 //  Copyright © 2019 Christian Baltzer. All rights reserved.
 //
 
 import UIKit
 
-class Tabelle_AlleFeste: UITableViewController {
-    
-    var WorkingObjekt: AlleDaten!
+class Tabelle_AlleKu_nstler: UITableViewController {
+
+    var WorkingObjekt: Fest!
     var NewLoader = Loader()
-    var index = 0
+    var index = 0;
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        WorkingObjekt = NewLoader.start()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        let DatenLaden = UserDefaults.standard
+        let Test = DatenLaden.object(forKey: "Ubergabe") as? Data
+        
+        WorkingObjekt = try? PropertyListDecoder().decode(Fest.self, from: Test!)
+        
+        if(WorkingObjekt.Spielplan[0].Name == ""){
+            WorkingObjekt.Spielplan.append(band(NameDerBand: "Leider Noch keine Infos :("))
+        }
     }
 
     // MARK: - Table view data source
@@ -33,38 +36,20 @@ class Tabelle_AlleFeste: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return WorkingObjekt.Feste.count
-    }
-
-    //MARK: - Table View Loading sequence
-    
-    @IBAction func RefreshMensa(_ sender: UIRefreshControl) {
-        let que = DispatchQueue(label: "Update")
-        que.async {
-            self.WorkingObjekt = self.NewLoader.start()
-            self.tableView.reloadData()
-            sender.endRefreshing()}
+        return WorkingObjekt.Heerlager.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        let textDatum = WorkingObjekt.Feste[indexPath.row].Name.split(separator: " ", maxSplits: 1)
-        
-        
-        cell.textLabel?.text = String(textDatum[1])
-        cell.detailTextLabel?.text = String(textDatum[0]) 
+        cell.textLabel?.text = WorkingObjekt.Spielplan[indexPath.row].Name
+        // Configure the cell...
+        cell.textLabel?.numberOfLines=0
+        cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         return cell
     }
-
-
-    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        let DatenLaden = UserDefaults.standard
-        
-        DatenLaden.set(try? PropertyListEncoder().encode(WorkingObjekt.Feste[indexPath.row]), forKey: "Ubergabe")
-        performSegue(withIdentifier: "Weitere Infos", sender: Any?.self)
-    }
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -101,6 +86,7 @@ class Tabelle_AlleFeste: UITableViewController {
     }
     */
 
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -108,6 +94,6 @@ class Tabelle_AlleFeste: UITableViewController {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    
+    */
 
 }
