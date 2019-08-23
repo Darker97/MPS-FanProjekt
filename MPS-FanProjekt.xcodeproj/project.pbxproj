@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A20BA8B5E7AC6BB3F3818DA8 /* Pods_MPS_FanProjektTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69F0FCF4798D6EE8FA12D045 /* Pods_MPS_FanProjektTests.framework */; };
+		AA1A4F42231023E100A92E49 /* InfoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1A4F41231023E100A92E49 /* InfoText.swift */; };
+		AA1A4F442310240E00A92E49 /* Tabelle_AlleKünstler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1A4F432310240E00A92E49 /* Tabelle_AlleKünstler.swift */; };
+		AA1A4F462310249900A92E49 /* Tabelle_AlleLAger.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1A4F452310249900A92E49 /* Tabelle_AlleLAger.swift */; };
 		AA1BECC2230F3F0500D42C8F /* AlleDaten.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1BECBF230F3F0500D42C8F /* AlleDaten.swift */; };
 		AA1BECC3230F3F0500D42C8F /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1BECC0230F3F0500D42C8F /* Loader.swift */; };
 		AA1BECC4230F3F0500D42C8F /* Tabelle_AlleFeste.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1BECC1230F3F0500D42C8F /* Tabelle_AlleFeste.swift */; };
@@ -37,6 +40,9 @@
 		46B45335081403CF52344040 /* Pods-MPS-FanProjekt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPS-FanProjekt.release.xcconfig"; path = "Pods/Target Support Files/Pods-MPS-FanProjekt/Pods-MPS-FanProjekt.release.xcconfig"; sourceTree = "<group>"; };
 		4887CA2B2C8D4C34363C6E67 /* Pods_MPS_FanProjekt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MPS_FanProjekt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F0FCF4798D6EE8FA12D045 /* Pods_MPS_FanProjektTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MPS_FanProjektTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA1A4F41231023E100A92E49 /* InfoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoText.swift; sourceTree = "<group>"; };
+		AA1A4F432310240E00A92E49 /* Tabelle_AlleKünstler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tabelle_AlleKünstler.swift"; sourceTree = "<group>"; };
+		AA1A4F452310249900A92E49 /* Tabelle_AlleLAger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabelle_AlleLAger.swift; sourceTree = "<group>"; };
 		AA1BECBF230F3F0500D42C8F /* AlleDaten.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlleDaten.swift; sourceTree = "<group>"; };
 		AA1BECC0230F3F0500D42C8F /* Loader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
 		AA1BECC1230F3F0500D42C8F /* Tabelle_AlleFeste.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tabelle_AlleFeste.swift; sourceTree = "<group>"; };
@@ -119,6 +125,9 @@
 				AA1BECBF230F3F0500D42C8F /* AlleDaten.swift */,
 				AA1BECC0230F3F0500D42C8F /* Loader.swift */,
 				AA1BECC1230F3F0500D42C8F /* Tabelle_AlleFeste.swift */,
+				AA1A4F41231023E100A92E49 /* InfoText.swift */,
+				AA1A4F452310249900A92E49 /* Tabelle_AlleLAger.swift */,
+				AA1A4F432310240E00A92E49 /* Tabelle_AlleKünstler.swift */,
 			);
 			path = "MPS-FanProjekt";
 			sourceTree = "<group>";
@@ -310,10 +319,13 @@
 			files = (
 				AA438DA9230F3E1B00E99970 /* ViewController.swift in Sources */,
 				AA1BECC2230F3F0500D42C8F /* AlleDaten.swift in Sources */,
+				AA1A4F42231023E100A92E49 /* InfoText.swift in Sources */,
 				AA1BECC3230F3F0500D42C8F /* Loader.swift in Sources */,
 				AA438DA5230F3E1B00E99970 /* AppDelegate.swift in Sources */,
 				AA438DAF230F3E1B00E99970 /* MPS_FanProjekt.xcdatamodeld in Sources */,
 				AA438DA7230F3E1B00E99970 /* SceneDelegate.swift in Sources */,
+				AA1A4F462310249900A92E49 /* Tabelle_AlleLAger.swift in Sources */,
+				AA1A4F442310240E00A92E49 /* Tabelle_AlleKünstler.swift in Sources */,
 				AA1BECC4230F3F0500D42C8F /* Tabelle_AlleFeste.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
