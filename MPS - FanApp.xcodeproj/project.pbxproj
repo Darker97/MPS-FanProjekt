@@ -14,6 +14,10 @@
 		AA3A102B2442294E0010A838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA3A102A2442294E0010A838 /* Assets.xcassets */; };
 		AA3A102E2442294E0010A838 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA3A102D2442294E0010A838 /* Preview Assets.xcassets */; };
 		AA3A10312442294E0010A838 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3A102F2442294E0010A838 /* LaunchScreen.storyboard */; };
+		AAD26BDB24422B990096BA7C /* Analyse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BD824422B990096BA7C /* Analyse.swift */; };
+		AAD26BDD24422B990096BA7C /* Scrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BDA24422B990096BA7C /* Scrapper.swift */; };
+		AAD26BDF24422C040096BA7C /* Front.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BDE24422C040096BA7C /* Front.swift */; };
+		AAD26BE224422C490096BA7C /* DatenSpeicher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BE024422C490096BA7C /* DatenSpeicher.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		AA3A102D2442294E0010A838 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AA3A10302442294E0010A838 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA3A10322442294E0010A838 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AAD26BD824422B990096BA7C /* Analyse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analyse.swift; sourceTree = "<group>"; };
+		AAD26BDA24422B990096BA7C /* Scrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scrapper.swift; sourceTree = "<group>"; };
+		AAD26BDE24422C040096BA7C /* Front.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Front.swift; sourceTree = "<group>"; };
+		AAD26BE124422C490096BA7C /* DatenSpeicher.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DatenSpeicher.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				AA3A10212442294C0010A838 /* AppDelegate.swift */,
+				AAD26BD524422B3B0096BA7C /* Data_Functions */,
 				AA3A10232442294C0010A838 /* SceneDelegate.swift */,
 				AA3A10282442294C0010A838 /* ContentView.swift */,
 				AA3A102A2442294E0010A838 /* Assets.xcassets */,
@@ -76,6 +85,17 @@
 				AA3A102D2442294E0010A838 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AAD26BD524422B3B0096BA7C /* Data_Functions */ = {
+			isa = PBXGroup;
+			children = (
+				AAD26BD824422B990096BA7C /* Analyse.swift */,
+				AAD26BDA24422B990096BA7C /* Scrapper.swift */,
+				AAD26BDE24422C040096BA7C /* Front.swift */,
+				AAD26BE024422C490096BA7C /* DatenSpeicher.xcdatamodeld */,
+			);
+			path = Data_Functions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,9 +170,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA3A10222442294C0010A838 /* AppDelegate.swift in Sources */,
+				AAD26BE224422C490096BA7C /* DatenSpeicher.xcdatamodeld in Sources */,
+				AAD26BDD24422B990096BA7C /* Scrapper.swift in Sources */,
 				AA3A10242442294C0010A838 /* SceneDelegate.swift in Sources */,
+				AAD26BDB24422B990096BA7C /* Analyse.swift in Sources */,
 				AA3A10292442294C0010A838 /* ContentView.swift in Sources */,
 				AA3A10272442294C0010A838 /* MPS___FanApp.xcdatamodeld in Sources */,
+				AAD26BDF24422C040096BA7C /* Front.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +379,16 @@
 			);
 			currentVersion = AA3A10262442294C0010A838 /* MPS___FanApp.xcdatamodel */;
 			path = "MPS___FanApp.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		AAD26BE024422C490096BA7C /* DatenSpeicher.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AAD26BE124422C490096BA7C /* DatenSpeicher.xcdatamodel */,
+			);
+			currentVersion = AAD26BE124422C490096BA7C /* DatenSpeicher.xcdatamodel */;
+			path = DatenSpeicher.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

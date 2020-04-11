@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15508" systemVersion="19E258a" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Band" representedClassName="Band" syncable="YES" codeGenerationType="class">
+        <attribute name="buehne" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="zeit" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="Fest" representedClassName="Fest" syncable="YES" codeGenerationType="class">
+        <attribute name="anfahrt" optional="YES" attributeType="String"/>
+        <attribute name="datum" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="html" optional="YES" attributeType="String"/>
+        <attribute name="infotext" optional="YES" attributeType="String"/>
+        <attribute name="link" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="ort" optional="YES" attributeType="String"/>
+        <relationship name="heerlager" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lager"/>
+        <relationship name="spielplan" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Band"/>
+        <relationship name="verkaufsgruppen" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MarktGruppe"/>
+    </entity>
+    <entity name="Lager" representedClassName="Lager" syncable="YES" codeGenerationType="class">
+        <attribute name="beschreibung" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="MarktGruppe" representedClassName="MarktGruppe" syncable="YES" codeGenerationType="class">
+        <attribute name="namen" optional="YES" attributeType="String"/>
+        <relationship name="staende" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Marktstand"/>
+    </entity>
+    <entity name="Marktstand" representedClassName="Marktstand" syncable="YES" codeGenerationType="class">
+        <attribute name="homepage" optional="YES" attributeType="String"/>
+        <attribute name="kontakt" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="MPS" representedClassName="MPS" syncable="YES" codeGenerationType="class">
+        <attribute name="html" optional="YES" attributeType="String"/>
+        <attribute name="link" optional="YES" attributeType="String"/>
+        <relationship name="feste" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Fest"/>
+    </entity>
+    <elements>
+        <element name="Band" positionX="282.33984375" positionY="-311.06640625" width="128" height="88"/>
+        <element name="Lager" positionX="286.8671875" positionY="-409.84375" width="128" height="73"/>
+        <element name="Fest" positionX="-68.125" positionY="-436.2734375" width="220.92578125" height="193"/>
+        <element name="MPS" positionX="-257.26953125" positionY="-419.109375" width="128" height="88"/>
+        <element name="Marktstand" positionX="541.8125" positionY="-169.91015625" width="128" height="88"/>
+        <element name="MarktGruppe" positionX="288.109375" positionY="-190.8984375" width="128" height="73"/>
+    </elements>
+</model>
