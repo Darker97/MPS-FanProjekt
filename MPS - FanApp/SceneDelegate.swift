@@ -26,10 +26,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
         let contentView = ContentView().environment(\.managedObjectContext, context)
         
-        let db = LoadData()
-        let Temp = Get_Fest_all(db: db)
+        let db = openDatabase()
         
-        print (Temp)
+        DropAllTables(db: db!)
+        
+        //creating table
+        createTables(db: db!)
+        
+        LoadData(db: db!)
+        let Feste = Get_Fest_all(db: db!)
+        
+        
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
