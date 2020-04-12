@@ -92,7 +92,7 @@ func LoadData(){
         Sucher = "#tabTeilnehmendeMarkthaendler > container"
         
         let MarktstandHTML = laden_Websites(link: link)
-        let MarktStände = scrapper_Objecte_Text(html: MarktstandHTML, Selector: Sucher)
+        let MarktStände = scrapper_Objecte(html: MarktstandHTML, Selector: Sucher)
         
         for Markt in MarktStände{
             var Markt_Namen = ""
@@ -109,15 +109,24 @@ func LoadData(){
         // ----------------------------------------------------------------- //
         // Lager
         link = MainLink + Fest + "/heerlager.php"
-        Sucher = ""
+        Sucher = "#tabTeilnehmendeHeerlager > container"
         
+        let Lager_Html = laden_Websites(link: link)
+        let Heerlager = scrapper_Objecte(html: Lager_Html, Selector: Sucher)
         
-        
-        // TODO: einfügen
-        // func insert_Lager(db: OpaquePointer, Name:String, Beschreibung: String, Link: String, Fest_name: String)
-        
-        
-        
+        for lager in Heerlager{
+            var Lager_Name = ""
+            var Lager_HomePage = ""
+            var Lager_Link = ""
+            
+            Lager_Name      = scrapper_Objecte_Text(html: lager, Selector: "description")[0]
+            Lager_HomePage  = try! scrapper_Objecte_Links(html: lager, Selector: ".link_external")[0]
+            Lager_Link      = try! scrapper_Objecte_Links(html: lager, Selector: ".link_email")[0]
+            
+            // einfügen
+            insert_Lager(db: db!, Name: Lager_Name, HomePage: Lager_HomePage, Link: Lager_Link, Fest_name: Fest_Name)
+        }
+
         i = i + 1
     }
         
