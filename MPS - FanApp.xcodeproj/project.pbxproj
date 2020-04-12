@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AA1D55F3244330480009D8D5 /* Datenbank.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BD824422B990096BA7C /* Datenbank.swift */; };
+		AA1D55F524434F1C0009D8D5 /* Datenbank Getter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1D55F424434F1C0009D8D5 /* Datenbank Getter.swift */; };
 		AA3A10222442294C0010A838 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A10212442294C0010A838 /* AppDelegate.swift */; };
 		AA3A10242442294C0010A838 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A10232442294C0010A838 /* SceneDelegate.swift */; };
 		AA3A10272442294C0010A838 /* MPS___FanApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA3A10252442294C0010A838 /* MPS___FanApp.xcdatamodeld */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		A72EA270E74E39679EF65FF8 /* Pods_MPS___FanApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_MPS___FanApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA1D55F424434F1C0009D8D5 /* Datenbank Getter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Datenbank Getter.swift"; sourceTree = "<group>"; };
 		AA3A101E2442294C0010A838 /* MPS - FanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MPS - FanApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3A10212442294C0010A838 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA3A10232442294C0010A838 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				AAD26BD824422B990096BA7C /* Datenbank.swift */,
 				AAD26BDA24422B990096BA7C /* Scrapper.swift */,
 				AAD26BDE24422C040096BA7C /* Front.swift */,
+				AA1D55F424434F1C0009D8D5 /* Datenbank Getter.swift */,
 				AAD26BE3244233F50096BA7C /* README.md */,
 			);
 			path = Data_Functions;
@@ -245,6 +248,7 @@
 				AA1D55F3244330480009D8D5 /* Datenbank.swift in Sources */,
 				AAD26BDD24422B990096BA7C /* Scrapper.swift in Sources */,
 				AA3A10242442294C0010A838 /* SceneDelegate.swift in Sources */,
+				AA1D55F524434F1C0009D8D5 /* Datenbank Getter.swift in Sources */,
 				AA3A10292442294C0010A838 /* ContentView.swift in Sources */,
 				AA3A10272442294C0010A838 /* MPS___FanApp.xcdatamodeld in Sources */,
 				AAD26BDF24422C040096BA7C /* Front.swift in Sources */,
