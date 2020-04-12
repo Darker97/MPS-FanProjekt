@@ -30,7 +30,7 @@ func createTables(db: OpaquePointer){
             CREATE TABLE IF NOT EXISTS `mydb`.`Fest` ( `anfahrt` VARCHAR(255) NULL, `Datum` VARCHAR(255) NULL, `Infotext` VARCHAR(255) NULL, `link` VARCHAR(255) NULL, `name` VARCHAR(255) NOT NULL, PRIMARY KEY (`name`));
          """,
          """
-            CREATE TABLE IF NOT EXISTS `mydb`.`Lager` ( `Name` VARCHAR(255) NOT NULL, `Beschreibung` VARCHAR(255) NULL, `Link` VARCHAR(255) NULL, `Fest_name` VARCHAR(255) NOT NULL, PRIMARY KEY (`Name`), INDEX `fk_Lager_Fest1_idx` (`Fest_name` ASC) VISIBLE, CONSTRAINT `fk_Lager_Fest1` FOREIGN KEY (`Fest_name`) REFERENCES `mydb`.`Fest` (`name`) ON DELETE NO ACTION ON UPDATE NO ACTION) ;
+            CREATE TABLE IF NOT EXISTS `mydb`.`Lager` ( `Name` VARCHAR(255) NOT NULL, `HomePage` VARCHAR(255) NULL, `Link` VARCHAR(255) NULL, `Fest_name` VARCHAR(255) NOT NULL, PRIMARY KEY (`Name`), INDEX `fk_Lager_Fest1_idx` (`Fest_name` ASC) VISIBLE, CONSTRAINT `fk_Lager_Fest1` FOREIGN KEY (`Fest_name`) REFERENCES `mydb`.`Fest` (`name`) ON DELETE NO ACTION ON UPDATE NO ACTION) ;
 
          """,
          """
@@ -66,12 +66,12 @@ func insert_Fest(db: OpaquePointer, Name:String, link: String, Infotext: String,
     exeute_withoutReturn(db: db, Query: Query_Finished)
 }
 
-func insert_Lager(db: OpaquePointer, Name:String, Beschreibung: String, Link: String, Fest_name: String){
+func insert_Lager(db: OpaquePointer, Name:String, HomePage: String, Link: String, Fest_name: String){
     // INSERT INTO `mydb`.`Lager` (`Name`, `Beschreibung`, `Link`, `Fest_name`) VALUES (NULL, NULL, NULL, NULL);
-    let Query = "  INSERT INTO `mydb`.`Lager` (`Name`, `Beschreibung`, `Link`, `Fest_name`) VALUES ( "
+    let Query = "  INSERT INTO `mydb`.`Lager` (`Name`, `HomePage`, `Link`, `Fest_name`) VALUES ( "
     let Query_Zusatz = " ); "
     
-    let Query_Finished = Query + Name + "," + Beschreibung + "," + Link + "," + Fest_name + Query_Zusatz
+    let Query_Finished = Query + Name + "," + HomePage + "," + Link + "," + Fest_name + Query_Zusatz
     
     exeute_withoutReturn(db: db, Query: Query_Finished)
 }
