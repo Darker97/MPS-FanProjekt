@@ -32,3 +32,51 @@ func createTables(db: OpaquePointer){
         exeute_withoutReturn(db, query)
     }
 }
+
+func insert_Band(db: OpaquePointer, Name:String, Typ: String, Zeit: String, Homepage: String, Fest_name: String){
+    // INSERT INTO `mydb`.`Band` (`Name`, `typ`, `Zeit`, `Homepage`, `Fest_name`) VALUES (NULL, NULL, NULL, NULL, NULL);
+    var Query = """ INSERT INTO `mydb`.`Band` (`Name`, `typ`, `Zeit`, `Homepage`, `Fest_name`) VALUES ( """
+    var Query_Zusatz = """ ); """
+    
+    var Query_Finished = Query + Name + "," + Typ + "," + Zeit + "," + Homepage + "," + Fest_name + Query_Zusatz
+    
+    exeute_withoutReturn(db, Query_Finished)
+}
+
+func insert_Fest(db: OpaquePointer, Name:String, link: String, Infotext: String, Datum: String, anfahrt: String){
+    // INSERT INTO `mydb`.`Fest` (`anfahrt`, `Datum`, `Infotext`, `link`, `name`) VALUES (NULL, NULL, NULL, NULL, NULL);
+    var Query = """ INSERT INTO `mydb`.`Fest` (`anfahrt`, `Datum`, `Infotext`, `link`, `name`) VALUES ( """
+    var Query_Zusatz = """ ); """
+    
+    var Query_Finished = Query + anfahrt + "," + Datum + "," + Infotext + "," + link + "," + nNme + Query_Zusatz
+    
+    exeute_withoutReturn(db, Query_Finished)
+}
+
+func insert_Lager(db: OpaquePointer, Name:String, Beschreibung: String, Link: String, Fest_name: String){
+    // INSERT INTO `mydb`.`Lager` (`Name`, `Beschreibung`, `Link`, `Fest_name`) VALUES (NULL, NULL, NULL, NULL);
+    var Query = """  INSERT INTO `mydb`.`Lager` (`Name`, `Beschreibung`, `Link`, `Fest_name`) VALUES ( """
+    var Query_Zusatz = """ ); """
+    
+    var Query_Finished = Query + Name + "," + Beschreibung + "," + Link + "," + Fest_name + Query_Zusatz
+    
+    exeute_withoutReturn(db, Query_Finished)
+}
+
+func insert_Marktstand(db: OpaquePointer, Name:String, Kontakt: String, Homepage: String, Fest_name: String){
+    // INSERT INTO `mydb`.`Marktstand` (`name`, `Kontakt`, `Homepage`, `Fest_name`) VALUES (NULL, NULL, NULL, NULL);
+    var Query = """ INSERT INTO `mydb`.`Marktstand` (`name`, `Kontakt`, `Homepage`, `Fest_name`) VALUES ( """
+    var Query_Zusatz = """ ); """
+    
+    var Query_Finished = Query + Name + "," + Kontakt + "," + Homepage + "," + Fest_name + Query_Zusatz
+    
+    exeute_withoutReturn(db, Query_Finished)
+}
+
+func exeute_withoutReturn(db: OpaquePointer, Query: String){
+    if sqlite3_exec(db, Query, nil , nil , nil) != SQLITE_OK {
+        let errmsg = String(cString: sqlite3_errmsg(db)!)
+        print("error creating table: \(errmsg)")
+    }
+}
+
