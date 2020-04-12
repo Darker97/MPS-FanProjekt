@@ -8,9 +8,7 @@
 
 import Foundation
 
-func LoadData(){
-    let db = openDatabase()
-    
+func LoadData(db: OpaquePointer) -> OpaquePointer{
     // Fest Daten
     let MainLink = "https://www.spectaculum.de/"
 
@@ -51,7 +49,7 @@ func LoadData(){
         Fest_Anfahrt = scrapper_Objecte_Text(html: laden_Websites(link: link), Selector: Sucher)[0]
         
         //Einfügen
-        insert_Fest(db: db!, Name: Fest_Name, link: link, Infotext: Infos, Datum: Datum, anfahrt: Fest_Anfahrt)
+        insert_Fest(db: db, Name: Fest_Name, link: link, Infotext: Infos, Datum: Datum, anfahrt: Fest_Anfahrt)
         
         
         // ----------------------------------------------------------------- //
@@ -78,7 +76,7 @@ func LoadData(){
                     let KunstlerLink = try! scrapper_Objecte_Links(html: Kunst, Selector: ".kontakt_daten")[0]
                     
                     // Einfügen
-                    insert_Band(db: db!, Name: KunstlerName, Typ: kategorie_Name, Zeit: Tage_Namen[t], Homepage: KunstlerLink, Fest_name: Fest_Name)
+                    insert_Band(db: db, Name: KunstlerName, Typ: kategorie_Name, Zeit: Tage_Namen[t], Homepage: KunstlerLink, Fest_name: Fest_Name)
                 }
                 
             }
@@ -104,7 +102,7 @@ func LoadData(){
             Markt_Homepage      = try! scrapper_Objecte_Text(html: Markt, Selector: ".link_external")[0]
             
             //einfügen
-            insert_Marktstand(db: db!, Name: Markt_Namen, Kontakt: Markt_Kontakt, Homepage: Markt_Homepage, Fest_name: Fest_Name)
+            insert_Marktstand(db: db, Name: Markt_Namen, Kontakt: Markt_Kontakt, Homepage: Markt_Homepage, Fest_name: Fest_Name)
         }
         // ----------------------------------------------------------------- //
         // Lager
@@ -124,14 +122,11 @@ func LoadData(){
             Lager_Link      = try! scrapper_Objecte_Links(html: lager, Selector: ".link_email")[0]
             
             // einfügen
-            insert_Lager(db: db!, Name: Lager_Name, HomePage: Lager_HomePage, Link: Lager_Link, Fest_name: Fest_Name)
+            insert_Lager(db: db, Name: Lager_Name, HomePage: Lager_HomePage, Link: Lager_Link, Fest_name: Fest_Name)
         }
 
         i = i + 1
     }
         
-
-
-        
-    
+    return db
 }
