@@ -14,7 +14,7 @@
 		AA3A102B2442294E0010A838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA3A102A2442294E0010A838 /* Assets.xcassets */; };
 		AA3A102E2442294E0010A838 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA3A102D2442294E0010A838 /* Preview Assets.xcassets */; };
 		AA3A10312442294E0010A838 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3A102F2442294E0010A838 /* LaunchScreen.storyboard */; };
-		AAD26BDB24422B990096BA7C /* Analyse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BD824422B990096BA7C /* Analyse.swift */; };
+		AAD26BDB24422B990096BA7C /* Datenbank.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BD824422B990096BA7C /* Datenbank.swift */; };
 		AAD26BDD24422B990096BA7C /* Scrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BDA24422B990096BA7C /* Scrapper.swift */; };
 		AAD26BDF24422C040096BA7C /* Front.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BDE24422C040096BA7C /* Front.swift */; };
 		AAD26BE224422C490096BA7C /* DatenSpeicher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BE024422C490096BA7C /* DatenSpeicher.xcdatamodeld */; };
@@ -30,10 +30,13 @@
 		AA3A102D2442294E0010A838 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AA3A10302442294E0010A838 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA3A10322442294E0010A838 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AAD26BD824422B990096BA7C /* Analyse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Analyse.swift; sourceTree = "<group>"; };
+		AAD26BD824422B990096BA7C /* Datenbank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Datenbank.swift; sourceTree = "<group>"; };
 		AAD26BDA24422B990096BA7C /* Scrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scrapper.swift; sourceTree = "<group>"; };
 		AAD26BDE24422C040096BA7C /* Front.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Front.swift; sourceTree = "<group>"; };
 		AAD26BE124422C490096BA7C /* DatenSpeicher.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DatenSpeicher.xcdatamodel; sourceTree = "<group>"; };
+		AAD26BE3244233F50096BA7C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AAD26BE6244317CC0096BA7C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		AAD26BE7244317DC0096BA7C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +55,7 @@
 			children = (
 				AA3A10202442294C0010A838 /* MPS - FanApp */,
 				AA3A101F2442294C0010A838 /* Products */,
+				AAD26BE5244317CC0096BA7C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,12 +94,22 @@
 		AAD26BD524422B3B0096BA7C /* Data_Functions */ = {
 			isa = PBXGroup;
 			children = (
-				AAD26BD824422B990096BA7C /* Analyse.swift */,
+				AAD26BD824422B990096BA7C /* Datenbank.swift */,
 				AAD26BDA24422B990096BA7C /* Scrapper.swift */,
 				AAD26BDE24422C040096BA7C /* Front.swift */,
 				AAD26BE024422C490096BA7C /* DatenSpeicher.xcdatamodeld */,
+				AAD26BE3244233F50096BA7C /* README.md */,
 			);
 			path = Data_Functions;
+			sourceTree = "<group>";
+		};
+		AAD26BE5244317CC0096BA7C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AAD26BE7244317DC0096BA7C /* libsqlite3.tbd */,
+				AAD26BE6244317CC0096BA7C /* libsqlite3.0.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,7 +187,7 @@
 				AAD26BE224422C490096BA7C /* DatenSpeicher.xcdatamodeld in Sources */,
 				AAD26BDD24422B990096BA7C /* Scrapper.swift in Sources */,
 				AA3A10242442294C0010A838 /* SceneDelegate.swift in Sources */,
-				AAD26BDB24422B990096BA7C /* Analyse.swift in Sources */,
+				AAD26BDB24422B990096BA7C /* Datenbank.swift in Sources */,
 				AA3A10292442294C0010A838 /* ContentView.swift in Sources */,
 				AA3A10272442294C0010A838 /* MPS___FanApp.xcdatamodeld in Sources */,
 				AAD26BDF24422C040096BA7C /* Front.swift in Sources */,
