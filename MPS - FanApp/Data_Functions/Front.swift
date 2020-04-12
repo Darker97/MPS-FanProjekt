@@ -8,8 +8,13 @@
 
 import Foundation
 
-func LoadData(){
+func LoadData() -> OpaquePointer{
     let db = openDatabase()
+    
+    DropAllTables(db: db!)
+    
+    //creating table
+    createTables(db: db!)
     
     // Fest Daten
     let MainLink = "https://www.spectaculum.de/"
@@ -130,8 +135,5 @@ func LoadData(){
         i = i + 1
     }
         
-
-
-        
-    
+    return db!
 }
