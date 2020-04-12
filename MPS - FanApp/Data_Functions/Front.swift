@@ -75,7 +75,7 @@ func LoadData(){
                     KunstlerLink = try scrapper_Objecte_Links(html: Kunst, Selector: ".kontakt_daten")[0]
                     
                     // Einfügen
-                    insert_Band(db, KunstlerName, katejorie_Name, Tage_Name[t], KunstlerLink)
+                    insert_Band(db, KunstlerName, kategorie_Name, Tage_Name[t], KunstlerLink, Fest_Name)
                 }
                 
             }
@@ -96,14 +96,21 @@ func LoadData(){
             var Markt_Kontakt = ""
             var Markt_Homepage = ""
             
-            Markt_Namen         = Scrapper.scrapper_Objecte_Text(Markt, "")
-            Markt_Kontakt       = Scrapper.scrapper_Objecte_Text(Markt, "")
-            Markt_Homepage      = Scrapper.scrapper_Objecte_Text(Markt, "")
+            Markt_Namen         = Scrapper.scrapper_Objecte_Text(Markt, ".description")[0]
+            Markt_Kontakt       = try Scrapper.scrapper_Objecte_Text(Markt, ".link_email")[0]
+            Markt_Homepage      = try Scrapper.scrapper_Objecte_Text(Markt, ".link_external")[0]
             
-            //TODO: einfügen
+            //einfügen
+            insert_Marktstand(db, Markt_Namen, Markt_Kontakt, Markt_Homepage, Fest_Name)
         }
         // ----------------------------------------------------------------- //
         // Lager
+        
+        
+        
+        
+        // TODO: einfügen
+        // func insert_Lager(db: OpaquePointer, Name:String, Beschreibung: String, Link: String, Fest_name: String)
         
         
         
