@@ -1,6 +1,0 @@
-framework module Pods_MPS_FanProjektTests {
-  umbrella header "Pods-MPS-FanProjektTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
