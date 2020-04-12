@@ -18,13 +18,15 @@
 		AAD26BDD24422B990096BA7C /* Scrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BDA24422B990096BA7C /* Scrapper.swift */; };
 		AAD26BDF24422C040096BA7C /* Front.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BDE24422C040096BA7C /* Front.swift */; };
 		AAD26BE224422C490096BA7C /* DatenSpeicher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BE024422C490096BA7C /* DatenSpeicher.xcdatamodeld */; };
+		C58D3F9BA3FF077D8468D891 /* Pods_MPS___FanApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A72EA270E74E39679EF65FF8 /* Pods_MPS___FanApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A72EA270E74E39679EF65FF8 /* Pods_MPS___FanApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MPS___FanApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3A101E2442294C0010A838 /* MPS - FanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MPS - FanApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3A10212442294C0010A838 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA3A10232442294C0010A838 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AA3A10262442294C0010A838 /* MPS___FanApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MPS___FanApp.xcdatamodel"; sourceTree = "<group>"; };
+		AA3A10262442294C0010A838 /* MPS___FanApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MPS___FanApp.xcdatamodel; sourceTree = "<group>"; };
 		AA3A10282442294C0010A838 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA3A102A2442294E0010A838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA3A102D2442294E0010A838 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -37,6 +39,8 @@
 		AAD26BE3244233F50096BA7C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AAD26BE6244317CC0096BA7C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		AAD26BE7244317DC0096BA7C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		BBFCCC710D858419F10AAE81 /* Pods-MPS - FanApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPS - FanApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MPS - FanApp/Pods-MPS - FanApp.release.xcconfig"; sourceTree = "<group>"; };
+		FE4B56955C790FB733DD46EE /* Pods-MPS - FanApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPS - FanApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MPS - FanApp/Pods-MPS - FanApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,18 +48,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C58D3F9BA3FF077D8468D891 /* Pods_MPS___FanApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39B073914A894EF89E39B3AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FE4B56955C790FB733DD46EE /* Pods-MPS - FanApp.debug.xcconfig */,
+				BBFCCC710D858419F10AAE81 /* Pods-MPS - FanApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		AA3A10152442294B0010A838 = {
 			isa = PBXGroup;
 			children = (
 				AA3A10202442294C0010A838 /* MPS - FanApp */,
 				AA3A101F2442294C0010A838 /* Products */,
 				AAD26BE5244317CC0096BA7C /* Frameworks */,
+				39B073914A894EF89E39B3AA /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -108,6 +123,7 @@
 			children = (
 				AAD26BE7244317DC0096BA7C /* libsqlite3.tbd */,
 				AAD26BE6244317CC0096BA7C /* libsqlite3.0.tbd */,
+				A72EA270E74E39679EF65FF8 /* Pods_MPS___FanApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -119,9 +135,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AA3A10352442294E0010A838 /* Build configuration list for PBXNativeTarget "MPS - FanApp" */;
 			buildPhases = (
+				EF62E7CD8B1D54562D347293 /* [CP] Check Pods Manifest.lock */,
 				AA3A101A2442294C0010A838 /* Sources */,
 				AA3A101B2442294C0010A838 /* Frameworks */,
 				AA3A101C2442294C0010A838 /* Resources */,
+				5CF5D04921134A04597E1B96 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -177,6 +195,49 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5CF5D04921134A04597E1B96 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MPS - FanApp/Pods-MPS - FanApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-Synchronous/Alamofire_Synchronous.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_Synchronous.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MPS - FanApp/Pods-MPS - FanApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF62E7CD8B1D54562D347293 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MPS - FanApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AA3A101A2442294C0010A838 /* Sources */ = {
@@ -324,6 +385,7 @@
 		};
 		AA3A10362442294E0010A838 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE4B56955C790FB733DD46EE /* Pods-MPS - FanApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -344,6 +406,7 @@
 		};
 		AA3A10372442294E0010A838 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBFCCC710D858419F10AAE81 /* Pods-MPS - FanApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -392,7 +455,7 @@
 				AA3A10262442294C0010A838 /* MPS___FanApp.xcdatamodel */,
 			);
 			currentVersion = AA3A10262442294C0010A838 /* MPS___FanApp.xcdatamodel */;
-			path = "MPS___FanApp.xcdatamodeld";
+			path = MPS___FanApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
