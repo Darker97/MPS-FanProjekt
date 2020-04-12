@@ -9,21 +9,31 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("HI")
+    var body: some View{
+        Text("Hello World!")
+        
+    }
         // Überschrift
         
         // Button zum updaten
         
         // Button fürs Impressum
         
-        // Liste mit allen Festen
-        
-        
-    }
+        //Allen Festen
+          //Namen und Button für mehr
+    
+        // Button for All
+            // Liste mit
+            // Alle Bands
+                // Name
+                // Homepage
+            // Alle Marktstände
+                // Name
+                // Homepage
+                // Kontakt
 }
 
-// Tap Struktur
+// Tap Struktur Fest
     //Fest
         // Link
         // Infotext
