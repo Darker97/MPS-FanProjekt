@@ -107,6 +107,20 @@ func exeute_withoutReturn(db: OpaquePointer, Query: String){
     }
 }
 
-func execute_withReturn(db: OpaquePointer, Query: String){
+func execute_withReturn(db: OpaquePointer, Query: String, ErgebnisZeilen: Int32) -> [String]{
     //TODO
+    var queryStatement: OpaquePointer?
+    var Ergebnis = [String]()
+        if sqlite3_prepare_v2(db, Query, -1, &queryStatement, nil) == SQLITE_OK {
+          // 2
+            while (sqlite3_step(queryStatement) == SQLITE_ROW) {
+                var ZielString = ""
+                for i:Int32 in (0...ErgebnisZeilen-1){
+                    try ZielString.append(String(cString: sqlite3_column_text(queryStatement, i)))
+                    ZielString.append("|")
+                }
+                Ergebnis.append(ZielString)
+            }
+    }
+    return Ergebnis
 }
