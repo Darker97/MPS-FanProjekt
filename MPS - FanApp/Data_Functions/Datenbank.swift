@@ -1,14 +1,17 @@
 // Funktionen zum analysieren
+import UIKit
+import SQLite3
 
 func openDatabase() -> OpaquePointer? {
-  var db: OpaquePointer?
+    var db: OpaquePointer?
+    
 
    //the database file
    let fileURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-       .appendingPathComponent("HeroesDatabase.sqlite")
+       .appendingPathComponent("Database.sqlite")
 
    //opening the database
-   if sqlite3_open(fileURL.path, &amp;db) != SQLITE_OK {
+    if sqlite3_open(fileURL.path, &db) != SQLITE_OK {
        print("error opening database")
    }
 
@@ -93,3 +96,6 @@ func exeute_withoutReturn(db: OpaquePointer, Query: String){
     }
 }
 
+func execute_withReturn(db: OpaquePointer, Query: String){
+    
+}

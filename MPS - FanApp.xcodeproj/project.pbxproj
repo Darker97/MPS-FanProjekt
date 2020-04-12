@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA1D55F3244330480009D8D5 /* Datenbank.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BD824422B990096BA7C /* Datenbank.swift */; };
 		AA3A10222442294C0010A838 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A10212442294C0010A838 /* AppDelegate.swift */; };
 		AA3A10242442294C0010A838 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A10232442294C0010A838 /* SceneDelegate.swift */; };
 		AA3A10272442294C0010A838 /* MPS___FanApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA3A10252442294C0010A838 /* MPS___FanApp.xcdatamodeld */; };
@@ -14,28 +15,25 @@
 		AA3A102B2442294E0010A838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA3A102A2442294E0010A838 /* Assets.xcassets */; };
 		AA3A102E2442294E0010A838 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA3A102D2442294E0010A838 /* Preview Assets.xcassets */; };
 		AA3A10312442294E0010A838 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3A102F2442294E0010A838 /* LaunchScreen.storyboard */; };
-		AAD26BDB24422B990096BA7C /* Datenbank.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BD824422B990096BA7C /* Datenbank.swift */; };
 		AAD26BDD24422B990096BA7C /* Scrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BDA24422B990096BA7C /* Scrapper.swift */; };
 		AAD26BDF24422C040096BA7C /* Front.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BDE24422C040096BA7C /* Front.swift */; };
-		AAD26BE224422C490096BA7C /* DatenSpeicher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BE024422C490096BA7C /* DatenSpeicher.xcdatamodeld */; };
 		C58D3F9BA3FF077D8468D891 /* Pods_MPS___FanApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A72EA270E74E39679EF65FF8 /* Pods_MPS___FanApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A72EA270E74E39679EF65FF8 /* Pods_MPS___FanApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MPS___FanApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A72EA270E74E39679EF65FF8 /* Pods_MPS___FanApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_MPS___FanApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3A101E2442294C0010A838 /* MPS - FanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MPS - FanApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3A10212442294C0010A838 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA3A10232442294C0010A838 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AA3A10262442294C0010A838 /* MPS___FanApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MPS___FanApp.xcdatamodel; sourceTree = "<group>"; };
+		AA3A10262442294C0010A838 /* MPS___FanApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MPS___FanApp.xcdatamodel"; sourceTree = "<group>"; };
 		AA3A10282442294C0010A838 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA3A102A2442294E0010A838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA3A102D2442294E0010A838 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AA3A10302442294E0010A838 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA3A10322442294E0010A838 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AAD26BD824422B990096BA7C /* Datenbank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Datenbank.swift; sourceTree = "<group>"; };
+		AAD26BD824422B990096BA7C /* Datenbank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Datenbank.swift; sourceTree = "<group>"; usesTabs = 0; };
 		AAD26BDA24422B990096BA7C /* Scrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scrapper.swift; sourceTree = "<group>"; };
 		AAD26BDE24422C040096BA7C /* Front.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Front.swift; sourceTree = "<group>"; };
-		AAD26BE124422C490096BA7C /* DatenSpeicher.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DatenSpeicher.xcdatamodel; sourceTree = "<group>"; };
 		AAD26BE3244233F50096BA7C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AAD26BE6244317CC0096BA7C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		AAD26BE7244317DC0096BA7C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
@@ -112,7 +110,6 @@
 				AAD26BD824422B990096BA7C /* Datenbank.swift */,
 				AAD26BDA24422B990096BA7C /* Scrapper.swift */,
 				AAD26BDE24422C040096BA7C /* Front.swift */,
-				AAD26BE024422C490096BA7C /* DatenSpeicher.xcdatamodeld */,
 				AAD26BE3244233F50096BA7C /* README.md */,
 			);
 			path = Data_Functions;
@@ -245,10 +242,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA3A10222442294C0010A838 /* AppDelegate.swift in Sources */,
-				AAD26BE224422C490096BA7C /* DatenSpeicher.xcdatamodeld in Sources */,
+				AA1D55F3244330480009D8D5 /* Datenbank.swift in Sources */,
 				AAD26BDD24422B990096BA7C /* Scrapper.swift in Sources */,
 				AA3A10242442294C0010A838 /* SceneDelegate.swift in Sources */,
-				AAD26BDB24422B990096BA7C /* Datenbank.swift in Sources */,
 				AA3A10292442294C0010A838 /* ContentView.swift in Sources */,
 				AA3A10272442294C0010A838 /* MPS___FanApp.xcdatamodeld in Sources */,
 				AAD26BDF24422C040096BA7C /* Front.swift in Sources */,
@@ -400,7 +396,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Darker97.MPS---FanApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -421,7 +417,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Darker97.MPS---FanApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -455,17 +451,7 @@
 				AA3A10262442294C0010A838 /* MPS___FanApp.xcdatamodel */,
 			);
 			currentVersion = AA3A10262442294C0010A838 /* MPS___FanApp.xcdatamodel */;
-			path = MPS___FanApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-		AAD26BE024422C490096BA7C /* DatenSpeicher.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				AAD26BE124422C490096BA7C /* DatenSpeicher.xcdatamodel */,
-			);
-			currentVersion = AAD26BE124422C490096BA7C /* DatenSpeicher.xcdatamodel */;
-			path = DatenSpeicher.xcdatamodeld;
+			path = "MPS___FanApp.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
