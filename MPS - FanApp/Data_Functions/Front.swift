@@ -29,7 +29,9 @@ func LoadData(db: OpaquePointer) -> OpaquePointer{
         var Fest_Name = ""
         var Fest_Anfahrt = ""
         
-        let Datum = ""
+        var Datum = ""
+        
+        
         
         
         link = MainLink + Fest
@@ -44,9 +46,26 @@ func LoadData(db: OpaquePointer) -> OpaquePointer{
         
         Fest_Name = FestNamen[i]
         
+        var Datum_Bearbeitet = ""
+        
+        let Name_Zerlegt = Fest_Name.components(separatedBy: " ")
+        Datum = Name_Zerlegt[0]
+        
+        var Name_Bearbeitet = ""
+        
+        for i in (1...Name_Zerlegt.count-1){
+            Name_Bearbeitet.append(" ")
+            Name_Bearbeitet.append(Name_Zerlegt[i])
+        }
+        
+        Fest_Name = Name_Bearbeitet
+        
         link = MainLink + Fest + "/anfahrt.php"
         Sucher = "#main > p"
-        Fest_Anfahrt = scrapper_Objecte_Text(html: laden_Websites(link: link), Selector: Sucher)[0]
+        var temp = scrapper_Objecte_Text(html: laden_Websites(link: link), Selector: Sucher)
+        for i in (1...temp.count-1){
+            Fest_Anfahrt.append(temp[i])
+        }
         
         //Einfügen
         insert_Fest(db: db, Name: Fest_Name, link: link, Infotext: Infos, Datum: Datum, anfahrt: Fest_Anfahrt)
@@ -55,15 +74,16 @@ func LoadData(db: OpaquePointer) -> OpaquePointer{
         // ----------------------------------------------------------------- //
         //Tage & Bands
         link = MainLink + Fest + "/kuenstler.php"
-        Sucher = "#main > p"
-        let Tage_Namen = scrapper_Objecte_Text(html: link, Selector: Sucher)
-        let Tage_Links = scrapper_Objecte_Links(html: link, Selector: Sucher)
+        Sucher = "#main .tabContainer ul LI A"
+        var html = laden_Websites(link: link)
+        let Tage_Namen = scrapper_Objecte_Text(html: html, Selector: Sucher)
+        let Tage_Links = scrapper_Objecte_Links(html: html, Selector: Sucher)
         
         var t = 0
         for tage in Tage_Links{
-            let TagesHtml = laden_Websites(link: tage)
+            let TagesHtml = laden_Websites(link: MainLink + Fest + tage)
             // Typ
-            Sucher = ".kategorie ui-helper-clearfix"
+            Sucher = ".kategorie.ui-helper-clearfix"
             let kategorien_HTML = scrapper_Objecte(html: TagesHtml, Selector: Sucher)
             
             for kategorie in kategorien_HTML{
@@ -87,19 +107,22 @@ func LoadData(db: OpaquePointer) -> OpaquePointer{
         // ----------------------------------------------------------------- //
         //Markt
         link = MainLink + Fest + "/markthaendler.php"
-        Sucher = "#tabTeilnehmendeMarkthaendler > container"
+        Sucher = "#tabTeilnehmendeMarkthaendler > .container"
         
         let MarktstandHTML = laden_Websites(link: link)
         let MarktStände = scrapper_Objecte(html: MarktstandHTML, Selector: Sucher)
         
         for Markt in MarktStände{
-            var Markt_Namen = ""
-            var Markt_Kontakt = ""
-            var Markt_Homepage = ""
+            var Markt_Namen = " "
+            var Markt_Kontakt = " "
+            var Markt_Homepage = " "
             
-            Markt_Namen         = scrapper_Objecte_Text(html: Markt, Selector: ".description")[0]
-            Markt_Kontakt       = try! scrapper_Objecte_Text(html: Markt, Selector: ".link_email")[0]
-            Markt_Homepage      = try! scrapper_Objecte_Text(html: Markt, Selector: ".link_external")[0]
+            for t in scrapper_Objecte_Text(html: Markt, Selector: ".description"){Markt_Namen.append(t)            }
+            for kontakt in scrapper_Objecte_Text(html: Markt, Selector: ".kontakt_daten .link_email")       {Markt_Kontakt.append(kontakt)}
+            for kontakt in scrapper_Objecte_Text(html: Markt, Selector: ".kontakt_daten .link_external")    {Markt_Homepage.append(kontakt)}
+            
+            Markt_Namen = Markt_Namen.replacingOccurrences(of: "Kontakt", with: "", options: NSString.CompareOptions.literal, range: nil)
+            Markt_Namen = Markt_Namen.replacingOccurrences(of: "Homepage", with: "", options: NSString.CompareOptions.literal, range: nil)
             
             //einfügen
             insert_Marktstand(db: db, Name: Markt_Namen, Kontakt: Markt_Kontakt, Homepage: Markt_Homepage, Fest_name: Fest_Name)
@@ -107,19 +130,22 @@ func LoadData(db: OpaquePointer) -> OpaquePointer{
         // ----------------------------------------------------------------- //
         // Lager
         link = MainLink + Fest + "/heerlager.php"
-        Sucher = "#tabTeilnehmendeHeerlager > container"
+        Sucher = "#tabTeilnehmendeHeerlager > .container"
         
         let Lager_Html = laden_Websites(link: link)
         let Heerlager = scrapper_Objecte(html: Lager_Html, Selector: Sucher)
         
         for lager in Heerlager{
-            var Lager_Name = ""
-            var Lager_HomePage = ""
-            var Lager_Link = ""
+            var Lager_Name = " "
+            var Lager_HomePage = " "
+            var Lager_Link = " "
             
-            Lager_Name      = scrapper_Objecte_Text(html: lager, Selector: "description")[0]
-            Lager_HomePage  = try! scrapper_Objecte_Links(html: lager, Selector: ".link_external")[0]
-            Lager_Link      = try! scrapper_Objecte_Links(html: lager, Selector: ".link_email")[0]
+            for t in scrapper_Objecte_Text(html: lager, Selector: ".description"){Lager_Name.append(t)}
+            for t in scrapper_Objecte_Links(html: lager, Selector: ".kontakt_daten .link_external"){Lager_HomePage.append(t)}
+            for t in scrapper_Objecte_Links(html: lager, Selector: ".kontakt_daten .link_email"){Lager_Link.append(t)}
+            
+            Lager_Name = Lager_Name.replacingOccurrences(of: "Kontakt", with: "", options: NSString.CompareOptions.literal, range: nil)
+            Lager_Name = Lager_Name.replacingOccurrences(of: "Homepage", with: "", options: NSString.CompareOptions.literal, range: nil)
             
             // einfügen
             insert_Lager(db: db, Name: Lager_Name, HomePage: Lager_HomePage, Link: Lager_Link, Fest_name: Fest_Name)
