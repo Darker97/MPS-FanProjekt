@@ -10,10 +10,13 @@ import Foundation
 
 
 func DropAllTables(){
-    let QuerrysToDrop = ["DROP TABLE IF EXISTS `Fest` ;",
-                         "DROP TABLE IF EXISTS `Lager` ;",
-                         "DROP TABLE IF EXISTS `Band` ;",
-                         "DROP TABLE IF EXISTS `Marktstand` ;"]
+    let QuerrysToDrop = ["""DROP TABLE IF EXISTS `Fest`""",
+                        """DROP TABLE IF EXISTS `Lager`""",
+                        """DROP TABLE IF EXISTS `Band`""",
+                        """DROP TABLE IF EXISTS `Marktstand`"""
+                        """DROP TABLE IF EXISTS `Fest_has_Band`""",
+                        """DROP TABLE IF EXISTS `Fest_has_Lager`""",
+                        """DROP TABLE IF EXISTS `Fest_has_Marktstand`"""] 
     
     for query in QuerrysToDrop{
         exeute_withoutReturn(Query: query)
