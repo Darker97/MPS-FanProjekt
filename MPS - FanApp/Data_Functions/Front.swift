@@ -8,7 +8,7 @@
 
 import Foundation
 
-func LoadData(db: OpaquePointer) -> OpaquePointer{
+func LoadData(){
     // Fest Daten
     let MainLink = "https://www.spectaculum.de/"
 
@@ -31,9 +31,6 @@ func LoadData(db: OpaquePointer) -> OpaquePointer{
         
         var Datum = ""
         
-        
-        
-        
         link = MainLink + Fest
         Sucher = "#main > p"
         let Fest_InfoText = scrapper_Objecte_Text(html: laden_Websites(link: link), Selector: Sucher)
@@ -45,8 +42,6 @@ func LoadData(db: OpaquePointer) -> OpaquePointer{
         }
         
         Fest_Name = FestNamen[i]
-        
-        var Datum_Bearbeitet = ""
         
         let Name_Zerlegt = Fest_Name.components(separatedBy: " ")
         Datum = Name_Zerlegt[0]
@@ -68,7 +63,7 @@ func LoadData(db: OpaquePointer) -> OpaquePointer{
         }
         
         //Einfügen
-        insert_Fest(db: db, Name: Fest_Name, link: link, Infotext: Infos, Datum: Datum, anfahrt: Fest_Anfahrt)
+        insert_Fest(Name: Fest_Name, link: link, Infotext: Infos, Datum: Datum, anfahrt: Fest_Anfahrt)
         
         
         // ----------------------------------------------------------------- //
@@ -96,7 +91,7 @@ func LoadData(db: OpaquePointer) -> OpaquePointer{
                     let KunstlerLink = try! scrapper_Objecte_Links(html: Kunst, Selector: ".kontakt_daten")[0]
                     
                     // Einfügen
-                    insert_Band(db: db, Name: KunstlerName, Typ: kategorie_Name, Zeit: Tage_Namen[t], Homepage: KunstlerLink, Fest_name: Fest_Name)
+                    insert_Band(Name: KunstlerName, Typ: kategorie_Name, Zeit: Tage_Namen[t], Homepage: KunstlerLink, Fest_name: Fest_Name)
                 }
                 
             }
@@ -125,7 +120,7 @@ func LoadData(db: OpaquePointer) -> OpaquePointer{
             Markt_Namen = Markt_Namen.replacingOccurrences(of: "Homepage", with: "", options: NSString.CompareOptions.literal, range: nil)
             
             //einfügen
-            insert_Marktstand(db: db, Name: Markt_Namen, Kontakt: Markt_Kontakt, Homepage: Markt_Homepage, Fest_name: Fest_Name)
+            insert_Marktstand(Name: Markt_Namen, Kontakt: Markt_Kontakt, Homepage: Markt_Homepage, Fest_name: Fest_Name)
         }
         // ----------------------------------------------------------------- //
         // Lager
@@ -148,11 +143,9 @@ func LoadData(db: OpaquePointer) -> OpaquePointer{
             Lager_Name = Lager_Name.replacingOccurrences(of: "Homepage", with: "", options: NSString.CompareOptions.literal, range: nil)
             
             // einfügen
-            insert_Lager(db: db, Name: Lager_Name, HomePage: Lager_HomePage, Link: Lager_Link, Fest_name: Fest_Name)
+            insert_Lager(Name: Lager_Name, HomePage: Lager_HomePage, Link: Lager_Link, Fest_name: Fest_Name)
         }
 
         i = i + 1
     }
-        
-    return db
 }

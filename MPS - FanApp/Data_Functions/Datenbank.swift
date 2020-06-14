@@ -18,89 +18,9 @@ func openDatabase() -> OpaquePointer? {
     return db
 }
 
-func DropAllTables(db: OpaquePointer){
-    let QuerrysToDrop = ["DROP TABLE IF EXISTS `Fest` ;",
-                         "DROP TABLE IF EXISTS `Lager` ;",
-                         "DROP TABLE IF EXISTS `Band` ;",
-                         "DROP TABLE IF EXISTS `Marktstand` ;"]
+func exeute_withoutReturn(Query: String){
+    let db: OpaquePointer! = openDatabase()
     
-    for query in QuerrysToDrop{
-        exeute_withoutReturn(db: db, Query: query)
-    }
-}
-
-func createTables(db: OpaquePointer){
-    let querrysToCreate =
-        ["""
-            CREATE TABLE IF NOT EXISTS `Fest` ( `anfahrt` VARCHAR(255) NULL, `Datum` VARCHAR(255) NOT NULL, `Infotext` VARCHAR(255) NULL, `link` VARCHAR(255) NULL, `name` VARCHAR(255) NOT NULL, PRIMARY KEY (`name`, `Datum`));
-         """,
-         """
-            CREATE TABLE IF NOT EXISTS `Lager` (`Name` VARCHAR(255) NOT NULL,`HomePage` VARCHAR(255) NULL,`Link` VARCHAR(255) NULL,`Fest_name` VARCHAR(255) NOT NULL,PRIMARY KEY (`Name`, `Fest_name`), FOREIGN KEY (`Fest_name`)  REFERENCES `Fest` (`name`)  ON DELETE NO ACTION  ON UPDATE NO ACTION)
-
-         """,
-         """
-            CREATE TABLE IF NOT EXISTS `Band` (`Name` VARCHAR(255) NOT NULL,`typ` VARCHAR(255) NULL,`Zeit` VARCHAR(255) NOT NULL,`Homepage` VARCHAR(255) NULL,`Fest_name` VARCHAR(255) NOT NULL,PRIMARY KEY (`Name`, `Fest_name`, `Zeit`), FOREIGN KEY (`Fest_name`)  REFERENCES `Fest` (`name`)  ON DELETE NO ACTION  ON UPDATE NO ACTION);
-         """,
-         """
-            CREATE TABLE IF NOT EXISTS `Marktstand` (`name` VARCHAR(255) NOT NULL,`Kontakt` VARCHAR(255) NULL,`Homepage` VARCHAR(255) NULL,`Fest_name` VARCHAR(255) NOT NULL,PRIMARY KEY (`name`, `Fest_name`), FOREIGN KEY (`Fest_name`)  REFERENCES `Fest` (`name`)  ON DELETE NO ACTION  ON UPDATE NO ACTION)
-         """
-        ]
-    
-    for query in querrysToCreate{
-        exeute_withoutReturn(db: db, Query: query)
-    }
-}
-
-func insert_Band(db: OpaquePointer, Name:String, Typ: String, Zeit: String, Homepage: String, Fest_name: String){
-    // INSERT INTO `mydb`.`Band` (`Name`, `typ`, `Zeit`, `Homepage`, `Fest_name`) VALUES (NULL, NULL, NULL, NULL, NULL);
-    let Query = " INSERT INTO `Band` (`Name`, `typ`, `Zeit`, `Homepage`, `Fest_name`) VALUES ( "
-    let Query_Zusatz = "\" ); "
-    
-    let Query_Finished = Query + "\"" + Name + "\",\"" + Typ + "\",\"" + Zeit + "\",\"" + Homepage + "\",\"" + Fest_name + Query_Zusatz
-    
-    exeute_withoutReturn(db: db, Query: Query_Finished)
-}
-
-func insert_Fest(db: OpaquePointer, Name:String, link: String, Infotext: String, Datum: String, anfahrt: String){
-    // INSERT INTO `mydb`.`Fest` (`anfahrt`, `Datum`, `Infotext`, `link`, `name`) VALUES (NULL, NULL, NULL, NULL, NULL);
-    let Query = " INSERT INTO `Fest` (`anfahrt`, `Datum`, `Infotext`, `link`, `name`) VALUES ( "
-    let Query_Zusatz = "\" ); "
-    
-    let Infotext_Bearbeitet = Infotext.replacingOccurrences(of: "\"", with: " ", options: NSString.CompareOptions.literal, range: nil)
-    let Anfahrt_Bearbeitet = anfahrt.replacingOccurrences(of: "\"", with: " ", options: NSString.CompareOptions.literal, range: nil)
-    
-    let Query_Finished = Query + "\"" + Anfahrt_Bearbeitet + "\",\"" + Datum + "\",\"" + Infotext_Bearbeitet + "\",\"" + link + "\",\"" + Name + Query_Zusatz
-    
-    exeute_withoutReturn(db: db, Query: Query_Finished)
-}
-
-func insert_Lager(db: OpaquePointer, Name:String, HomePage: String, Link: String, Fest_name: String){
-    // INSERT INTO `Lager` (`Name`, `Beschreibung`, `Link`, `Fest_name`) VALUES (NULL, NULL, NULL, NULL);
-    let Query = "  INSERT INTO `Lager` (`Name`, `HomePage`, `Link`, `Fest_name`) VALUES ( "
-    let Query_Zusatz = "\" ); "
-    
-    var Name_bearbeitet = Name.replacingOccurrences(of: "\"", with: " ", options: NSString.CompareOptions.literal, range: nil)
-    Name_bearbeitet = Name_bearbeitet.replacingOccurrences(of: "\n", with: " ", options: NSString.CompareOptions.literal, range: nil)
-    
-    let Query_Finished = Query + "\"" + Name_bearbeitet + "\",\"" + HomePage + "\",\"" + Link + "\",\"" + Fest_name + Query_Zusatz
-    
-    exeute_withoutReturn(db: db, Query: Query_Finished)
-}
-
-func insert_Marktstand(db: OpaquePointer, Name:String, Kontakt: String, Homepage: String, Fest_name: String){
-    // INSERT INTO `mydb`.`Marktstand` (`name`, `Kontakt`, `Homepage`, `Fest_name`) VALUES (NULL, NULL, NULL, NULL);
-    let Query = " INSERT INTO `Marktstand` (`name`, `Kontakt`, `Homepage`, `Fest_name`) VALUES ( "
-    let Query_Zusatz = "\" ); "
-    
-    var Name_bearbeitet = Name.replacingOccurrences(of: "\"", with: " ", options: NSString.CompareOptions.literal, range: nil)
-    Name_bearbeitet = Name_bearbeitet.replacingOccurrences(of: "\n", with: " ", options: NSString.CompareOptions.literal, range: nil)
-    
-    let Query_Finished = Query + "\"" + Name_bearbeitet + "\",\"" + Kontakt + "\",\"" + Homepage + "\",\"" + Fest_name + Query_Zusatz
-    
-    exeute_withoutReturn(db: db, Query: Query_Finished)
-}
-
-func exeute_withoutReturn(db: OpaquePointer, Query: String){
     if sqlite3_exec(db, Query, nil , nil , nil) != SQLITE_OK {
         let errmsg = String(cString: sqlite3_errmsg(db)!)
         print("error creating table: \(errmsg)")
@@ -110,7 +30,9 @@ func exeute_withoutReturn(db: OpaquePointer, Query: String){
     }
 }
 
-func execute_withReturn(db: OpaquePointer, Query: String, ErgebnisZeilen: Int32) -> [String]{
+func execute_withReturn(Query: String, ErgebnisZeilen: Int32) -> [String]{
+    
+    let db: OpaquePointer! = openDatabase()
     //TODO
     var queryStatement: OpaquePointer?
     var Ergebnis = [String]()
