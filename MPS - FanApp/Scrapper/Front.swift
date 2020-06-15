@@ -108,6 +108,7 @@ func LadenAllerMärkte(){
         
         if(!Name.contains(TempName)){
             TempName = TempName.replacingOccurrences(of: "Kontakt", with: "", options: NSString.CompareOptions.literal, range: nil)
+            TempName = TempName.replacingOccurrences(of: "> ", with: "", options: NSString.CompareOptions.literal, range: nil)
             TempName = TempName.replacingOccurrences(of: "Homepage", with: "", options: NSString.CompareOptions.literal, range: nil)
             TempName = TempName.replacingOccurrences(of: "\"", with: "", options: NSString.CompareOptions.literal, range: nil)
             
@@ -251,7 +252,7 @@ func LadenDerFeste(){
                     
                     // Künstler Updaten
                     // UPDATE Band SET Homepage = WHERE Name =
-                    let Query = "UPDATE Band SET Homepage = " + KunstlerLink + "WHERE Name = " + KunstlerName
+                    let Query = "UPDATE Band SET Homepage = \"" + KunstlerLink + "\" WHERE Name = \"" + KunstlerName + "\""
                     exeute_withoutReturn(Query: Query)
                     
                     // Neuer Auftritt

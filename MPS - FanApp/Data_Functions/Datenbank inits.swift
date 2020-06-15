@@ -26,8 +26,9 @@ func DropAllTables(){
 func createTables(){
     let querrysToCreate =
         ["""
-        CREATE TABLE IF NOT EXISTS `Fest` ( `anfahrt` VARCHAR(255) NULL, `Datum` VARCHAR(255) NULL, `Infotext` VARCHAR(255) NULL, `link` VARCHAR(255) NULL, `name` VARCHAR(255) NOT NULL, PRIMARY KEY (`name`))
+        CREATE TABLE IF NOT EXISTS `Fest` ( `anfahrt` VARCHAR(255) NULL, `Datum` VARCHAR(255) NULL, `Infotext` VARCHAR(255) NULL, `link` VARCHAR(255) NULL, `name` VARCHAR(255) NOT NULL, PRIMARY KEY (`name`, `Datum`))
         """,
+         
         """
         CREATE TABLE IF NOT EXISTS `Lager` ( `Name` VARCHAR(255) NOT NULL, `Beschreibung` VARCHAR(255) NULL, `Link` VARCHAR(255) NULL, PRIMARY KEY (`Name`))
         """,

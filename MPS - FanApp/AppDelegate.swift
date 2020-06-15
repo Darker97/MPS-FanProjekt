@@ -20,8 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DropAllTables()
         createTables()
         
+        LadenAllerBands()
         LadenAllerMärkte()
-        let Test = (execute_withReturn(Query: "select * from Marktstand", ErgebnisZeilen: 4))
+        
+        LadenDerFeste()
+        let Test = (execute_withReturn(Query: "select name, Datum from Fest", ErgebnisZeilen: 2))
         for temp in Test{
             print(temp)
             print("\n")
