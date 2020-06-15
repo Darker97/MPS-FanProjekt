@@ -2,24 +2,37 @@ PODS:
   - Alamofire (4.8.2)
   - Alamofire-Synchronous (4.0.0):
     - Alamofire (~> 4.0)
+  - AlamofireImage (3.5.2):
+    - Alamofire (~> 4.8)
+  - Deviice (1.01)
+  - Luminous (1.10):
+    - Deviice
   - SwiftSoup (2.2.0)
 
 DEPENDENCIES:
   - Alamofire
   - Alamofire-Synchronous
+  - AlamofireImage
+  - Luminous
   - SwiftSoup
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Alamofire-Synchronous
+    - AlamofireImage
+    - Deviice
+    - Luminous
     - SwiftSoup
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   Alamofire-Synchronous: eedf1e6e961c3795a63c74990b3f7d9fbfac7e50
+  AlamofireImage: 63cfe3baf1370be6c498149687cf6db3e3b00999
+  Deviice: 3b909d7149547f07914c8599ce43093b0cea12fb
+  Luminous: 347aec0bcb7bac264dbef32f45bd531de0279df6
   SwiftSoup: 230991361c5ba249d140161860a3864a28b63860
 
-PODFILE CHECKSUM: 1a7024cc7e0230c3ae927b0666351e3e42ce351d
+PODFILE CHECKSUM: a8018e74bdb5a4dc04bc02e0fbe22b95887a4cba
 
 COCOAPODS: 1.5.2
