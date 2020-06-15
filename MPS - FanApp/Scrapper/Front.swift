@@ -42,7 +42,7 @@ func LadenAllerBands(){
     for temp in Bild{
         // link runterladen
         
-        var tempName = Name[i]
+        let tempName = Name[i]
         
         Alamofire.request(temp).responseImage { response in
             if case .success(let image) = response.result {
@@ -69,7 +69,7 @@ func LadenAllerBands(){
     // Einfügen
     
     for p in Range(0...Name.count-1){
-        NeueBand(Name:Name[p], Typ: "", Zeit: "", Homepage: "", BildLink: "")
+        NeueBand(Name:Name[p], Typ: "", Zeit: "", Homepage: "", BildLink: "standart")
     }
 }
 
@@ -132,7 +132,6 @@ func LadenAllerMärkte(){
         var tempName = Name[i]
         
         let standart = "standart"
-        _ = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(standart)
         let Query = "UPDATE Marktstand SET BildLink = \"" + standart + "\" WHERE name = \"" + tempName + "\""
         exeute_withoutReturn(Query: Query)
         
@@ -164,7 +163,7 @@ func LadenAllerMärkte(){
     for p in Range(0...Name.count-1){
 
         
-        NeuerMarktstand(Name:Name[p], Kontakt: Email[p], Homepage: Webpage[p], BildLink: "")
+        NeuerMarktstand(Name:Name[p], Kontakt: Email[p], Homepage: Webpage[p], BildLink: "standart")
     }
 }
 
