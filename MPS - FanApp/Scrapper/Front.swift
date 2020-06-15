@@ -13,7 +13,61 @@ import Alamofire
 import AlamofireImage
 
 func LadenAllerBands(){
+    let Link = "https://www.spectaculum.de/hoehepunkte/konzerte/"
+    
+    let HTML = laden_Websites(link: Link)
+    let AlleBands = scrapper_Objecte(html: HTML, Selector: "div.col.col-3-1")
+    
+    var Name: [String] = [""]
+    var Bild: [String] = [""]
+    var BildLink: [String] = [""]
+    
+    for Bands in AlleBands{
+        let doc = try! SwiftSoup.parse(Bands)
+        
+        // Name
+        let TempName = try! doc.text()
+        
+        // Bild  -> .thumbContainer img -> attr("src")
+        // https://www.spectaculum.de/_lib/img/kuenstler/294.jpg
+        let TempBild = try! doc.select("img").array()[0].attr("src")
+        
+        if(!Name.contains(TempName)){
+            Name.append(TempName)
+            Bild.append("https://www.spectaculum.de" + TempBild)
+        }
+    }
+    
+    // Bilder laden falls noch nicht vorhanden
+    var i = 0
+    for temp in Bild{
+        // link runterladen
+        Alamofire.request(temp).responseImage { response in
+            debugPrint(response)
 
+            print(response.request!)
+            print(response.response!)
+
+            if case .success(let image) = response.result {
+                print("image downloaded: \(image)")
+                // speichern des Bildes
+                let SavePoint = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(Name[i])
+                let BildDaten = image.jpegData(compressionQuality: 0.5)
+                try! BildDaten?.write(to: SavePoint)
+                BildLink.append(SavePoint.absoluteString)
+            } else {
+                // Eintragen vom Standart Bild falls das andere Bild nicht gepasst hat
+                let SavePoint = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("standart")
+                BildLink.append(SavePoint.absoluteString)
+            }
+        }
+        i+=1
+    }
+    // Einfügen
+    
+    for p in Range(0...Name.count){
+        NeueBand(Name:Name[p], Typ: "", Zeit: "", Homepage: "", BildLink: BildLink[p])
+    }
 }
 
 func LadenAllerMärkte(){
@@ -22,11 +76,11 @@ func LadenAllerMärkte(){
     let HTML = laden_Websites(link: Link)
     let AlleStände = scrapper_Objecte(html: HTML, Selector: "div.container")
     
-    var Name: [String]
-    var Email: [String]
-    var Webpage: [String]
-    var Bild: [String]
-    var BildLink: [String]
+    var Name: [String] = [""]
+    var Email: [String] = [""]
+    var Webpage: [String] = [""]
+    var Bild: [String] = [""]
+    var BildLink: [String] = [""]
     
     for Stand in AlleStände{
         var doc = try! SwiftSoup.parse(Stand)
@@ -64,13 +118,13 @@ func LadenAllerMärkte(){
             if case .success(let image) = response.result {
                 print("image downloaded: \(image)")
                 // speichern des Bildes
-                let SavePoint = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)           .appendingPathComponent(Name[i])
+                let SavePoint = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(Name[i])
                 let BildDaten = image.jpegData(compressionQuality: 0.5)
                 try! BildDaten?.write(to: SavePoint)
                 BildLink.append(SavePoint.absoluteString)
             } else {
                 // Eintragen vom Standart Bild falls das andere Bild nicht gepasst hat
-                let SavePoint = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)           .appendingPathComponent("standart")
+                let SavePoint = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("standart")
                 BildLink.append(SavePoint.absoluteString)
             }
         }
@@ -142,7 +196,7 @@ func LoadData(){
         }
         
         //Einfügen
-        insert_Fest(Name: Fest_Name, link: link, Infotext: Infos, Datum: Datum, anfahrt: Fest_Anfahrt)
+        //insert_Fest(Name: Fest_Name, link: link, Infotext: Infos, Datum: Datum, anfahrt: Fest_Anfahrt)
         
         
         // ----------------------------------------------------------------- //
@@ -170,7 +224,7 @@ func LoadData(){
                     let KunstlerLink = try! scrapper_Objecte_Links(html: Kunst, Selector: ".kontakt_daten")[0]
                     
                     // Einfügen
-                    insert_Band(Name: KunstlerName, Typ: kategorie_Name, Zeit: Tage_Namen[t], Homepage: KunstlerLink, Fest_name: Fest_Name)
+                    //insert_Band(Name: KunstlerName, Typ: kategorie_Name, Zeit: Tage_Namen[t], Homepage: KunstlerLink, Fest_name: Fest_Name)
                 }
                 
             }
@@ -199,7 +253,7 @@ func LoadData(){
             Markt_Namen = Markt_Namen.replacingOccurrences(of: "Homepage", with: "", options: NSString.CompareOptions.literal, range: nil)
             
             //einfügen
-            insert_Marktstand(Name: Markt_Namen, Kontakt: Markt_Kontakt, Homepage: Markt_Homepage, Fest_name: Fest_Name)
+            //insert_Marktstand(Name: Markt_Namen, Kontakt: Markt_Kontakt, Homepage: Markt_Homepage, Fest_name: Fest_Name)
         }
         // ----------------------------------------------------------------- //
         // Lager
@@ -222,7 +276,7 @@ func LoadData(){
             Lager_Name = Lager_Name.replacingOccurrences(of: "Homepage", with: "", options: NSString.CompareOptions.literal, range: nil)
             
             // einfügen
-            insert_Lager(Name: Lager_Name, HomePage: Lager_HomePage, Link: Lager_Link, Fest_name: Fest_Name)
+            //insert_Lager(Name: Lager_Name, HomePage: Lager_HomePage, Link: Lager_Link, Fest_name: Fest_Name)
         }
 
         i = i + 1
