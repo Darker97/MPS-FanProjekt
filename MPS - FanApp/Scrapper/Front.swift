@@ -79,11 +79,10 @@ func LadenAllerMärkte(){
     let HTML = laden_Websites(link: Link)
     let AlleStände = scrapper_Objecte(html: HTML, Selector: "div.container")
     
-    var Name: [String] = [""]
-    var Email: [String] = [""]
-    var Webpage: [String] = [""]
-    var Bild: [String] = [""]
-    var BildLink: [String] = [""]
+    var Name: [String] = []
+    var Email: [String] = []
+    var Webpage: [String] = []
+    var Bild: [String] = []
     
     for Stand in AlleStände{
         var doc = try! SwiftSoup.parse(Stand)
@@ -92,15 +91,30 @@ func LadenAllerMärkte(){
         var TempName = try! doc.text()
         
         // Email -> .kontakt_daten .link_email -> attr("href")
-        var TempEmail = try! doc.select(".kontakt_daten .link_email").array()[0].attr("href")
+        var TempEmail = ""
+        var temo = try! doc.select(".kontakt_daten .link_email").array()
+        for x in temo{TempEmail.append(try! x.attr("href"))}
         
         // Link  -> .kontakt_daten .link_external -> attr("href")
-        var TempLink = try! doc.select(".kontakt_daten .link_external").array()[0].attr("href")
+        var TempLink = ""
+        temo = try! doc.select(".kontakt_daten .link_external").array()
+        for x in temo{TempLink.append(try! x.attr("href"))
+            break}
         
         // Bild  -> .thumbContainer img -> attr("src")
-        var TempBild = try! doc.select("img").array()[0].attr("src")
+        var TempBild = ""
+        temo = try! doc.select(".thumbContainer img").array()
+        for x in temo{TempBild.append(try! x.attr("src"))}
         
         if(!Name.contains(TempName)){
+            TempName = TempName.replacingOccurrences(of: "Kontakt", with: "", options: NSString.CompareOptions.literal, range: nil)
+            TempName = TempName.replacingOccurrences(of: "Homepage", with: "", options: NSString.CompareOptions.literal, range: nil)
+            TempName = TempName.replacingOccurrences(of: "\"", with: "", options: NSString.CompareOptions.literal, range: nil)
+            
+            //mailto:
+            TempEmail = TempEmail.replacingOccurrences(of: "mailto:", with: "", options: NSString.CompareOptions.literal, range: nil)
+            
+            
             Name.append(TempName)
             Email.append(TempEmail)
             Webpage.append(TempLink)
@@ -112,31 +126,44 @@ func LadenAllerMärkte(){
     var i = 0
     for temp in Bild{
         // link runterladen
+        // link runterladen
+        
+        var tempName = Name[i]
+        
+        let standart = "standart"
+        _ = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(standart)
+        let Query = "UPDATE Marktstand SET BildLink = \"" + standart + "\" WHERE name = \"" + tempName + "\""
+        exeute_withoutReturn(Query: Query)
+        
+        /*
         Alamofire.request(temp).responseImage { response in
-            debugPrint(response)
-
-            print(response.request!)
-            print(response.response!)
-
             if case .success(let image) = response.result {
                 print("image downloaded: \(image)")
                 // speichern des Bildes
-                let SavePoint = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(Name[i])
+                let SavePoint = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(tempName)
                 let BildDaten = image.jpegData(compressionQuality: 0.5)
                 try! BildDaten?.write(to: SavePoint)
-                BildLink.append(SavePoint.absoluteString)
+                
+                let Query = "UPDATE Marktstand SET BildLink = \"" + tempName + "\" WHERE name = \"" + tempName + "\""
+                exeute_withoutReturn(Query: Query)
+                
+                
             } else {
                 // Eintragen vom Standart Bild falls das andere Bild nicht gepasst hat
-                let SavePoint = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("standart")
-                BildLink.append(SavePoint.absoluteString)
+                let standart = "standart"
+                _ = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(standart)
+                let Query = "UPDATE Marktstand SET BildLink = \"" + standart + "\" WHERE name = \"" + tempName + "\""
+                exeute_withoutReturn(Query: Query)
             }
-        }
+        }*/
         i+=1
     }
     // Einfügen
     
-    for p in Range(0...Name.count){
-        NeuerMarktstand(Name:Name[p], Kontakt: Email[p], Homepage: Webpage[p], BildLink: BildLink[p])
+    for p in Range(0...Name.count-1){
+
+        
+        NeuerMarktstand(Name:Name[p], Kontakt: Email[p], Homepage: Webpage[p], BildLink: "")
     }
 }
 
