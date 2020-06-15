@@ -138,15 +138,11 @@ func LadenAllerMärkte(){
 }
 
 func LadenDerFeste(){
-    
-}
-
-func LoadData(){
     // Fest Daten
     let MainLink = "https://www.spectaculum.de/"
 
     // Main Seite
-    let Main_Html = laden_Websites(link: MainLink)
+    let Main_Html = laden_Websites(link: MainLink + "indexMPS.php")
 
     let FestNamen = scrapper_Objecte_Text(html: Main_Html, Selector: "#linkTermine > ul > li > a")
     let FestLinks = scrapper_Objecte_Links(html: Main_Html, Selector: "#linkTermine > ul > li > a")
@@ -196,7 +192,7 @@ func LoadData(){
         }
         
         //Einfügen
-        //insert_Fest(Name: Fest_Name, link: link, Infotext: Infos, Datum: Datum, anfahrt: Fest_Anfahrt)
+        NeuesFest(Name: Fest_Name, link: link, Infotext: Infos, Datum: Datum, anfahrt: Fest_Anfahrt)
         
         
         // ----------------------------------------------------------------- //
@@ -223,8 +219,13 @@ func LoadData(){
                     let KunstlerName = scrapper_Objecte_Text(html: Kunst, Selector: ".kuenstler_name")[0]
                     let KunstlerLink = try! scrapper_Objecte_Links(html: Kunst, Selector: ".kontakt_daten")[0]
                     
-                    // Einfügen
-                    //insert_Band(Name: KunstlerName, Typ: kategorie_Name, Zeit: Tage_Namen[t], Homepage: KunstlerLink, Fest_name: Fest_Name)
+                    // Künstler Updaten
+                    // UPDATE Band SET Homepage = WHERE Name =
+                    let Query = "UPDATE Band SET Homepage = " + KunstlerLink + "WHERE Name = " + KunstlerName
+                    exeute_withoutReturn(Query: Query)
+                    
+                    // Neuer Auftritt
+                    NeuerAuftritt(Band: KunstlerName, Fest: Fest_Name)
                 }
                 
             }
@@ -253,6 +254,7 @@ func LoadData(){
             Markt_Namen = Markt_Namen.replacingOccurrences(of: "Homepage", with: "", options: NSString.CompareOptions.literal, range: nil)
             
             //einfügen
+            NeuerMarktstand(Marktstand: Markt_Namen, Fest: Fest_Name)
             //insert_Marktstand(Name: Markt_Namen, Kontakt: Markt_Kontakt, Homepage: Markt_Homepage, Fest_name: Fest_Name)
         }
         // ----------------------------------------------------------------- //
@@ -276,6 +278,9 @@ func LoadData(){
             Lager_Name = Lager_Name.replacingOccurrences(of: "Homepage", with: "", options: NSString.CompareOptions.literal, range: nil)
             
             // einfügen
+            NeuesLager(Name: Lager_Name, HomePage: Lager_HomePage, Link: Lager_Link)
+            
+            NeuesLager(Lager: Lager_Name, Fest: Fest_Name)
             //insert_Lager(Name: Lager_Name, HomePage: Lager_HomePage, Link: Lager_Link, Fest_name: Fest_Name)
         }
 
