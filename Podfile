@@ -10,5 +10,7 @@ target 'MPS - FanApp' do
   pod 'SwiftSoup'
   pod 'Alamofire'
   pod 'Alamofire-Synchronous'
+  pod 'AlamofireImage'
+  pod 'Luminous'
 
 end

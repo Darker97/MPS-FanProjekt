@@ -19,6 +19,7 @@
 		AA3A10312442294E0010A838 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA3A102F2442294E0010A838 /* LaunchScreen.storyboard */; };
 		AAD26BDD24422B990096BA7C /* Scrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BDA24422B990096BA7C /* Scrapper.swift */; };
 		AAD26BDF24422C040096BA7C /* Front.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BDE24422C040096BA7C /* Front.swift */; };
+		AAEFEEBB2497765D00EA2BE6 /* standart in Resources */ = {isa = PBXBuildFile; fileRef = AAEFEEBA2497765D00EA2BE6 /* standart */; };
 		C58D3F9BA3FF077D8468D891 /* Pods_MPS___FanApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A72EA270E74E39679EF65FF8 /* Pods_MPS___FanApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +27,6 @@
 		A72EA270E74E39679EF65FF8 /* Pods_MPS___FanApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_MPS___FanApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA00B54F24968B450067CE46 /* Datenbank Setter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Datenbank Setter.swift"; sourceTree = "<group>"; };
 		AA00B55124968B640067CE46 /* Datenbank inits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Datenbank inits.swift"; sourceTree = "<group>"; };
-		AA28288E247AEDC00000BAB4 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = "MPS - FanApp/MyPlayground.playground"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AA3A101E2442294C0010A838 /* MPS - FanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MPS - FanApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3A10212442294C0010A838 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA3A10232442294C0010A838 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +42,7 @@
 		AAD26BE3244233F50096BA7C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AAD26BE6244317CC0096BA7C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		AAD26BE7244317DC0096BA7C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		AAEFEEBA2497765D00EA2BE6 /* standart */ = {isa = PBXFileReference; lastKnownFileType = file; path = standart; sourceTree = "<group>"; };
 		BBFCCC710D858419F10AAE81 /* Pods-MPS - FanApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPS - FanApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MPS - FanApp/Pods-MPS - FanApp.release.xcconfig"; sourceTree = "<group>"; };
 		FE4B56955C790FB733DD46EE /* Pods-MPS - FanApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPS - FanApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MPS - FanApp/Pods-MPS - FanApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +68,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AA00B5532496CE270067CE46 /* Scrapper */ = {
+			isa = PBXGroup;
+			children = (
+				AAD26BDE24422C040096BA7C /* Front.swift */,
+				AAD26BDA24422B990096BA7C /* Scrapper.swift */,
+			);
+			path = Scrapper;
+			sourceTree = "<group>";
+		};
 		AA3A10152442294B0010A838 = {
 			isa = PBXGroup;
 			children = (
@@ -89,14 +99,15 @@
 			isa = PBXGroup;
 			children = (
 				AA3A10212442294C0010A838 /* AppDelegate.swift */,
+				AA00B5532496CE270067CE46 /* Scrapper */,
 				AAD26BD524422B3B0096BA7C /* Data_Functions */,
 				AA3A10232442294C0010A838 /* SceneDelegate.swift */,
 				AA3A10282442294C0010A838 /* ContentView.swift */,
 				AA3A102A2442294E0010A838 /* Assets.xcassets */,
 				AA3A102F2442294E0010A838 /* LaunchScreen.storyboard */,
 				AA3A10322442294E0010A838 /* Info.plist */,
+				AAEFEEBA2497765D00EA2BE6 /* standart */,
 				AA3A10252442294C0010A838 /* MPS___FanApp.xcdatamodeld */,
-				AA28288E247AEDC00000BAB4 /* MyPlayground.playground */,
 				AA3A102C2442294E0010A838 /* Preview Content */,
 			);
 			path = "MPS - FanApp";
@@ -114,8 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				AAD26BD824422B990096BA7C /* Datenbank.swift */,
-				AAD26BDA24422B990096BA7C /* Scrapper.swift */,
-				AAD26BDE24422C040096BA7C /* Front.swift */,
 				AA00B54F24968B450067CE46 /* Datenbank Setter.swift */,
 				AA00B55124968B640067CE46 /* Datenbank inits.swift */,
 				AAD26BE3244233F50096BA7C /* README.md */,
@@ -193,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAEFEEBB2497765D00EA2BE6 /* standart in Resources */,
 				AA3A10312442294E0010A838 /* LaunchScreen.storyboard in Resources */,
 				AA3A102E2442294E0010A838 /* Preview Assets.xcassets in Resources */,
 				AA3A102B2442294E0010A838 /* Assets.xcassets in Resources */,
@@ -211,12 +221,18 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-MPS - FanApp/Pods-MPS - FanApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-Synchronous/Alamofire_Synchronous.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Deviice/Deviice.framework",
+				"${BUILT_PRODUCTS_DIR}/Luminous/Luminous.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_Synchronous.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Deviice.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Luminous.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
