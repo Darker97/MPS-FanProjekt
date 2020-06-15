@@ -8,6 +8,18 @@
 
 import Foundation
 
+func LadenAllerBands(){
+    
+}
+
+func LadenAllerMärkte(){
+    
+}
+
+func LadenDerFeste(){
+    
+}
+
 func LoadData(){
     // Fest Daten
     let MainLink = "https://www.spectaculum.de/"
