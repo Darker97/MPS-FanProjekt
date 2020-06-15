@@ -17,18 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        DropAllTables()
-        createTables()
         
-        LadenAllerBands()
-        LadenAllerMärkte()
-        
-        LadenDerFeste()
-        let Test = (execute_withReturn(Query: "select name, Datum from Fest", ErgebnisZeilen: 2))
-        for temp in Test{
-            print(temp)
-            print("\n")
-        }
         return true
     }
 
