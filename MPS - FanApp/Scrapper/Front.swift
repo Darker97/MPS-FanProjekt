@@ -20,7 +20,6 @@ func LadenAllerBands(){
     
     var Name: [String] = []
     var Bild: [String] = []
-    var BildLink: [String] = []
     
     for Bands in AlleBands{
         let doc = try! SwiftSoup.parse(Bands)
