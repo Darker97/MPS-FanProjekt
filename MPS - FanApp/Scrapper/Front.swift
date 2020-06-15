@@ -7,13 +7,80 @@
 //
 
 import Foundation
+import SwiftSoup
+
+import Alamofire
+import AlamofireImage
 
 func LadenAllerBands(){
-    
+
 }
 
 func LadenAllerMärkte(){
+    let Link = "https://www.spectaculum.de/hoehepunkte/markt/"
     
+    let HTML = laden_Websites(link: Link)
+    let AlleStände = scrapper_Objecte(html: HTML, Selector: "div.container")
+    
+    var Name: [String]
+    var Email: [String]
+    var Webpage: [String]
+    var Bild: [String]
+    var BildLink: [String]
+    
+    for Stand in AlleStände{
+        var doc = try! SwiftSoup.parse(Stand)
+        
+        // Namen -> .description -> Erster Text
+        var TempName = try! doc.text()
+        
+        // Email -> .kontakt_daten .link_email -> attr("href")
+        var TempEmail = try! doc.select(".kontakt_daten .link_email").array()[0].attr("href")
+        
+        // Link  -> .kontakt_daten .link_external -> attr("href")
+        var TempLink = try! doc.select(".kontakt_daten .link_external").array()[0].attr("href")
+        
+        // Bild  -> .thumbContainer img -> attr("src")
+        var TempBild = try! doc.select("img").array()[0].attr("src")
+        
+        if(!Name.contains(TempName)){
+            Name.append(TempName)
+            Email.append(TempEmail)
+            Webpage.append(TempLink)
+            Bild.append(TempBild)
+        }
+    }
+    
+    // Bilder laden falls noch nicht vorhanden
+    var i = 0
+    for temp in Bild{
+        // link runterladen
+        Alamofire.request(temp).responseImage { response in
+            debugPrint(response)
+
+            print(response.request!)
+            print(response.response!)
+
+            if case .success(let image) = response.result {
+                print("image downloaded: \(image)")
+                // speichern des Bildes
+                let SavePoint = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)           .appendingPathComponent(Name[i])
+                let BildDaten = image.jpegData(compressionQuality: 0.5)
+                try! BildDaten?.write(to: SavePoint)
+                BildLink.append(SavePoint.absoluteString)
+            } else {
+                // Eintragen vom Standart Bild falls das andere Bild nicht gepasst hat
+                let SavePoint = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)           .appendingPathComponent("standart")
+                BildLink.append(SavePoint.absoluteString)
+            }
+        }
+        i+=1
+    }
+    // Einfügen
+    
+    for p in Range(0...Name.count){
+        NeuerMarktstand(Name:Name[p], Kontakt: Email[p], Homepage: Webpage[p], BildLink: BildLink[p])
+    }
 }
 
 func LadenDerFeste(){

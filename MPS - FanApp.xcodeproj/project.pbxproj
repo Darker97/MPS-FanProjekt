@@ -23,14 +23,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A72EA270E74E39679EF65FF8 /* Pods_MPS___FanApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_MPS___FanApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A72EA270E74E39679EF65FF8 /* Pods_MPS___FanApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MPS___FanApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA00B54F24968B450067CE46 /* Datenbank Setter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Datenbank Setter.swift"; sourceTree = "<group>"; };
 		AA00B55124968B640067CE46 /* Datenbank inits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Datenbank inits.swift"; sourceTree = "<group>"; };
-		AA28288E247AEDC00000BAB4 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = MyPlayground.playground; path = "MPS - FanApp/MyPlayground.playground"; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		AA3A101E2442294C0010A838 /* MPS - FanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MPS - FanApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3A10212442294C0010A838 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA3A10232442294C0010A838 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AA3A10262442294C0010A838 /* MPS___FanApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MPS___FanApp.xcdatamodel"; sourceTree = "<group>"; };
+		AA3A10262442294C0010A838 /* MPS___FanApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MPS___FanApp.xcdatamodel; sourceTree = "<group>"; };
 		AA3A10282442294C0010A838 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA3A102A2442294E0010A838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA3A102D2442294E0010A838 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -67,6 +66,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		AA00B5532496CE270067CE46 /* Scrapper */ = {
+			isa = PBXGroup;
+			children = (
+				AAD26BDE24422C040096BA7C /* Front.swift */,
+				AAD26BDA24422B990096BA7C /* Scrapper.swift */,
+			);
+			path = Scrapper;
+			sourceTree = "<group>";
+		};
 		AA3A10152442294B0010A838 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				AA3A10212442294C0010A838 /* AppDelegate.swift */,
+				AA00B5532496CE270067CE46 /* Scrapper */,
 				AAD26BD524422B3B0096BA7C /* Data_Functions */,
 				AA3A10232442294C0010A838 /* SceneDelegate.swift */,
 				AA3A10282442294C0010A838 /* ContentView.swift */,
@@ -96,7 +105,6 @@
 				AA3A102F2442294E0010A838 /* LaunchScreen.storyboard */,
 				AA3A10322442294E0010A838 /* Info.plist */,
 				AA3A10252442294C0010A838 /* MPS___FanApp.xcdatamodeld */,
-				AA28288E247AEDC00000BAB4 /* MyPlayground.playground */,
 				AA3A102C2442294E0010A838 /* Preview Content */,
 			);
 			path = "MPS - FanApp";
@@ -114,8 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				AAD26BD824422B990096BA7C /* Datenbank.swift */,
-				AAD26BDA24422B990096BA7C /* Scrapper.swift */,
-				AAD26BDE24422C040096BA7C /* Front.swift */,
 				AA00B54F24968B450067CE46 /* Datenbank Setter.swift */,
 				AA00B55124968B640067CE46 /* Datenbank inits.swift */,
 				AAD26BE3244233F50096BA7C /* README.md */,
@@ -211,12 +217,18 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-MPS - FanApp/Pods-MPS - FanApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire-Synchronous/Alamofire_Synchronous.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Deviice/Deviice.framework",
+				"${BUILT_PRODUCTS_DIR}/Luminous/Luminous.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire_Synchronous.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Deviice.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Luminous.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,7 +473,7 @@
 				AA3A10262442294C0010A838 /* MPS___FanApp.xcdatamodel */,
 			);
 			currentVersion = AA3A10262442294C0010A838 /* MPS___FanApp.xcdatamodel */;
-			path = "MPS___FanApp.xcdatamodeld";
+			path = MPS___FanApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
