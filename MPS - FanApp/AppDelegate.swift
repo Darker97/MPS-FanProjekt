@@ -16,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //DropAllTables()
+        //createTables()
+        
+        //LadenAllerBands()
+        let Test = (execute_withReturn(Query: "select * from Band", ErgebnisZeilen: 5))
+        print (Test)
         return true
     }
 

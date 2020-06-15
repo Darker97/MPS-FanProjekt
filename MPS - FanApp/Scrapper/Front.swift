@@ -18,9 +18,9 @@ func LadenAllerBands(){
     let HTML = laden_Websites(link: Link)
     let AlleBands = scrapper_Objecte(html: HTML, Selector: "div.col.col-3-1")
     
-    var Name: [String] = [""]
-    var Bild: [String] = [""]
-    var BildLink: [String] = [""]
+    var Name: [String] = []
+    var Bild: [String] = []
+    var BildLink: [String] = []
     
     for Bands in AlleBands{
         let doc = try! SwiftSoup.parse(Bands)
@@ -42,31 +42,35 @@ func LadenAllerBands(){
     var i = 0
     for temp in Bild{
         // link runterladen
+        
+        var tempName = Name[i]
+        
         Alamofire.request(temp).responseImage { response in
-            debugPrint(response)
-
-            print(response.request!)
-            print(response.response!)
-
             if case .success(let image) = response.result {
                 print("image downloaded: \(image)")
                 // speichern des Bildes
-                let SavePoint = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(Name[i])
+                let SavePoint = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(tempName)
                 let BildDaten = image.jpegData(compressionQuality: 0.5)
                 try! BildDaten?.write(to: SavePoint)
-                BildLink.append(SavePoint.absoluteString)
+                
+                let Query = "UPDATE Band SET BildLink = \"" + tempName + "\" WHERE Name = \"" + tempName + "\""
+                exeute_withoutReturn(Query: Query)
+                
+                
             } else {
                 // Eintragen vom Standart Bild falls das andere Bild nicht gepasst hat
-                let SavePoint = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("standart")
-                BildLink.append(SavePoint.absoluteString)
+                let standart = "standart"
+                _ = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(standart)
+                let Query = "UPDATE Band SET BildLink = \"" + standart + "\" WHERE Name = \"" + tempName + "\""
+                exeute_withoutReturn(Query: Query)
             }
         }
         i+=1
     }
     // Einfügen
     
-    for p in Range(0...Name.count){
-        NeueBand(Name:Name[p], Typ: "", Zeit: "", Homepage: "", BildLink: BildLink[p])
+    for p in Range(0...Name.count-1){
+        NeueBand(Name:Name[p], Typ: "", Zeit: "", Homepage: "", BildLink: "")
     }
 }
 
