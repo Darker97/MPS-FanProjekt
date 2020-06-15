@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AA00B55024968B450067CE46 /* Datenbank Setter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00B54F24968B450067CE46 /* Datenbank Setter.swift */; };
 		AA00B55224968B640067CE46 /* Datenbank inits.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00B55124968B640067CE46 /* Datenbank inits.swift */; };
+		AA118EBF249804AC001045FA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA118EBE249804AC001045FA /* DetailView.swift */; };
+		AA118EC1249804E9001045FA /* DetailStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA118EC0249804E9001045FA /* DetailStruct.swift */; };
 		AA1D55F3244330480009D8D5 /* Datenbank.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BD824422B990096BA7C /* Datenbank.swift */; };
 		AA3A10222442294C0010A838 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A10212442294C0010A838 /* AppDelegate.swift */; };
 		AA3A10242442294C0010A838 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3A10232442294C0010A838 /* SceneDelegate.swift */; };
@@ -20,6 +22,8 @@
 		AAD26BDD24422B990096BA7C /* Scrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BDA24422B990096BA7C /* Scrapper.swift */; };
 		AAD26BDF24422C040096BA7C /* Front.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD26BDE24422C040096BA7C /* Front.swift */; };
 		AAEFEEBB2497765D00EA2BE6 /* standart in Resources */ = {isa = PBXBuildFile; fileRef = AAEFEEBA2497765D00EA2BE6 /* standart */; };
+		AAEFEEC0249792E500EA2BE6 /* Struct - HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEFEEBF249792E500EA2BE6 /* Struct - HomeScreen.swift */; };
+		AAEFEEC224979B7000EA2BE6 /* standart copy in Resources */ = {isa = PBXBuildFile; fileRef = AAEFEEC124979B7000EA2BE6 /* standart copy */; };
 		C58D3F9BA3FF077D8468D891 /* Pods_MPS___FanApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A72EA270E74E39679EF65FF8 /* Pods_MPS___FanApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +31,8 @@
 		A72EA270E74E39679EF65FF8 /* Pods_MPS___FanApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_MPS___FanApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA00B54F24968B450067CE46 /* Datenbank Setter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Datenbank Setter.swift"; sourceTree = "<group>"; };
 		AA00B55124968B640067CE46 /* Datenbank inits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Datenbank inits.swift"; sourceTree = "<group>"; };
+		AA118EBE249804AC001045FA /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		AA118EC0249804E9001045FA /* DetailStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStruct.swift; sourceTree = "<group>"; };
 		AA3A101E2442294C0010A838 /* MPS - FanApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MPS - FanApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA3A10212442294C0010A838 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA3A10232442294C0010A838 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,7 +48,9 @@
 		AAD26BE3244233F50096BA7C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AAD26BE6244317CC0096BA7C /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		AAD26BE7244317DC0096BA7C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
-		AAEFEEBA2497765D00EA2BE6 /* standart */ = {isa = PBXFileReference; lastKnownFileType = file; path = standart; sourceTree = "<group>"; };
+		AAEFEEBA2497765D00EA2BE6 /* standart */ = {isa = PBXFileReference; lastKnownFileType = file; name = standart; path = ../standart; sourceTree = "<group>"; };
+		AAEFEEBF249792E500EA2BE6 /* Struct - HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Struct - HomeScreen.swift"; sourceTree = "<group>"; };
+		AAEFEEC124979B7000EA2BE6 /* standart copy */ = {isa = PBXFileReference; lastKnownFileType = file; path = "standart copy"; sourceTree = "<group>"; };
 		BBFCCC710D858419F10AAE81 /* Pods-MPS - FanApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPS - FanApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-MPS - FanApp/Pods-MPS - FanApp.release.xcconfig"; sourceTree = "<group>"; };
 		FE4B56955C790FB733DD46EE /* Pods-MPS - FanApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPS - FanApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MPS - FanApp/Pods-MPS - FanApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +88,7 @@
 		AA3A10152442294B0010A838 = {
 			isa = PBXGroup;
 			children = (
+				AAEFEEC124979B7000EA2BE6 /* standart copy */,
 				AA3A10202442294C0010A838 /* MPS - FanApp */,
 				AA3A101F2442294C0010A838 /* Products */,
 				AAD26BE5244317CC0096BA7C /* Frameworks */,
@@ -103,6 +112,8 @@
 				AAD26BD524422B3B0096BA7C /* Data_Functions */,
 				AA3A10232442294C0010A838 /* SceneDelegate.swift */,
 				AA3A10282442294C0010A838 /* ContentView.swift */,
+				AA118EBE249804AC001045FA /* DetailView.swift */,
+				AAEFEEBC24978CB800EA2BE6 /* UI */,
 				AA3A102A2442294E0010A838 /* Assets.xcassets */,
 				AA3A102F2442294E0010A838 /* LaunchScreen.storyboard */,
 				AA3A10322442294E0010A838 /* Info.plist */,
@@ -140,6 +151,15 @@
 				A72EA270E74E39679EF65FF8 /* Pods_MPS___FanApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AAEFEEBC24978CB800EA2BE6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				AAEFEEBF249792E500EA2BE6 /* Struct - HomeScreen.swift */,
+				AA118EC0249804E9001045FA /* DetailStruct.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +224,7 @@
 			files = (
 				AAEFEEBB2497765D00EA2BE6 /* standart in Resources */,
 				AA3A10312442294E0010A838 /* LaunchScreen.storyboard in Resources */,
+				AAEFEEC224979B7000EA2BE6 /* standart copy in Resources */,
 				AA3A102E2442294E0010A838 /* Preview Assets.xcassets in Resources */,
 				AA3A102B2442294E0010A838 /* Assets.xcassets in Resources */,
 			);
@@ -266,10 +287,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA3A10222442294C0010A838 /* AppDelegate.swift in Sources */,
+				AA118EC1249804E9001045FA /* DetailStruct.swift in Sources */,
 				AA1D55F3244330480009D8D5 /* Datenbank.swift in Sources */,
 				AAD26BDD24422B990096BA7C /* Scrapper.swift in Sources */,
 				AA3A10242442294C0010A838 /* SceneDelegate.swift in Sources */,
 				AA3A10292442294C0010A838 /* ContentView.swift in Sources */,
+				AA118EBF249804AC001045FA /* DetailView.swift in Sources */,
+				AAEFEEC0249792E500EA2BE6 /* Struct - HomeScreen.swift in Sources */,
 				AA00B55024968B450067CE46 /* Datenbank Setter.swift in Sources */,
 				AA3A10272442294C0010A838 /* MPS___FanApp.xcdatamodeld in Sources */,
 				AAD26BDF24422C040096BA7C /* Front.swift in Sources */,
