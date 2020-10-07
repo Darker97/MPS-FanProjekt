@@ -172,7 +172,7 @@ func LadenDerFeste(){
     let MainLink = "https://www.spectaculum.de/"
 
     // Main Seite
-    let Main_Html = laden_Websites(link: MainLink + "indexMPS.php")
+    let Main_Html = laden_Websites(link: MainLink + "index.php")
 
     let FestNamen = scrapper_Objecte_Text(html: Main_Html, Selector: "#linkTermine > ul > li > a")
     let FestLinks = scrapper_Objecte_Links(html: Main_Html, Selector: "#linkTermine > ul > li > a")

@@ -12,18 +12,10 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        //ladeStandart()
-        //DropAllTables()
         
-        //createTables()
-        
-        //LadenAllerBands()
-        //LadenAllerMärkte()
-        //LadenDerFeste()
+        createTables()
         
         return true
     }
