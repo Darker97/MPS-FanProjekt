@@ -1,3 +1,9 @@
+**Das Projekt wurde aufgrund fürs erste pausiert**
+
+Leider gibt es im Augenblick keine Feste die man hier darstellen könnte, daher wurde das Projekt pausiert.
+
+----
+
 Dies ist eine kleine FanApp für das Mittelalter Phantasie Spectaculum, kurz MPS.
 
 Mit ihr kannst du dir die nächsten Veranstaltungen anschauen, sehen welche Bands auftreten und welche Heerlager kommen.
