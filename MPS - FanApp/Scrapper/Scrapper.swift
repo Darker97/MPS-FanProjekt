@@ -9,6 +9,19 @@ import Alamofire_Synchronous
 
 // ----------------------------------------------------------------- //
 
+func ladeStandart(){
+    let link = "https://upload.wikimedia.org/wikipedia/commons/8/89/Blaues_Viereck.png"
+    Alamofire.request(link).responseImage { response in
+    if case .success(let image) = response.result {
+        print("image downloaded: \(image)")
+        // speichern des Bildes
+        let SavePoint = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("standart")
+        let BildDaten = image.jpegData(compressionQuality: 0.5)
+        try! BildDaten?.write(to: SavePoint)
+    }
+    }
+}
+
 func laden_Websites(link:String)-> String{
     var HTML = ""
     

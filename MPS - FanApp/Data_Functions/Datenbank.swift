@@ -42,6 +42,9 @@ func execute_withReturn(Query: String, ErgebnisZeilen: Int32) -> [String]{
                 var ZielString = ""
                 for i:Int32 in (0...ErgebnisZeilen-1){
                     try ZielString.append(String(cString: sqlite3_column_text(queryStatement, i)))
+                    if(ErgebnisZeilen == 1){
+                        break
+                    }
                     ZielString.append("|")
                 }
                 Ergebnis.append(ZielString)

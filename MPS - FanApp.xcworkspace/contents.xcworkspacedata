@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/christian/Projekts/5 - MPS - FanApp/standart">
+   </FileRef>
+   <FileRef
       location = "group:MPS - FanApp.xcodeproj">
    </FileRef>
    <FileRef
